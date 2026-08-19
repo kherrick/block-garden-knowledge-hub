@@ -1,0 +1,92 @@
+# Content-Only ShadowClaw Deployment Template
+#
+# Required repo structure:
+#
+#   .github/workflows/deploy-pages.yml   ← this file
+#   pages/
+#     main/                              ← your markdown / HTML pages
+#     routes.json                        ← optional pretty-path config
+#
+# Required GitHub repo settings:
+#   Settings → Pages → Source: GitHub Actions
+#
+# Required secrets / variables:
+#   None — GITHUB_TOKEN is granted pages:write automatically by the
+#   `permissions` block below.
+#
+# Customisation:
+#   PAGES_ORIGIN and PAGES_BASE_PATH are derived automatically from the
+#   repository name, so forks "just work" under
+#   https://<owner>.github.io/<repo>/.
+#   Override them explicitly if you use a custom domain (set PAGES_BASE_PATH
+#   to / for an apex domain).
+
+name: Build and Deploy via ShadowClaw
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout content repo
+        uses: actions/checkout@v4
+        with:
+          path: content
+
+      - name: Checkout ShadowClaw core (build toolchain)
+        uses: actions/checkout@v4
+        with:
+          repository: xt-ml/shadow-claw
+          path: shadow-claw
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: shadow-claw/package-lock.json
+
+      - name: Install ShadowClaw build dependencies
+        run: npm ci
+        working-directory: shadow-claw
+
+      - name: Inject content into ShadowClaw build root
+        run: |
+          rm -rf shadow-claw/pages
+          cp -r content/pages shadow-claw/
+
+      - name: Build production bundle
+        working-directory: shadow-claw
+        env:
+          NODE_ENV: production
+          PAGES_ORIGIN: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          PAGES_BASE_PATH: "/${{ github.event.repository.name }}/"
+        run: npm run build:prod
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: shadow-claw/dist/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
