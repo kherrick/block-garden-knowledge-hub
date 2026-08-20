@@ -6,6 +6,21 @@
     "/pages/main/~/content/01-about.md": {
       "prettyPath": "/main/about"
     },
+    "/pages/main/~/content/02-controls.md": {
+      "prettyPath": "/main/controls"
+    },
+    "/pages/main/~/content/03-farming-and-botany.md": {
+      "prettyPath": "/main/farming-and-botany"
+    },
+    "/pages/main/~/content/04-api-examples.md": {
+      "prettyPath": "/main/api-examples"
+    },
+    "/pages/main/~/content/05-demos-and-media.md": {
+      "prettyPath": "/main/demos-and-media"
+    },
+    "/pages/main/~/content/06-world-saves-and-pdfs.md": {
+      "prettyPath": "/main/world-saves-and-pdfs"
+    },
     "/pages/main/MEMORY.md": {
       "prettyPath": "/main/memory"
     }

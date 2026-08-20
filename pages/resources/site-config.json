@@ -2,23 +2,58 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "shadowClawVersion": "521b73044faafd8ba23c8754edafd520484fe187",
   "site": {
-    "title": "ShadowClaw Template",
-    "description": "Published with ShadowClaw"
+    "title": "Block Garden - Knowledge Hub",
+    "description": "3D sandbox exploration, procedural world generation, farming, and interactive game engine documentation powered by ShadowClaw.",
+    "themeColor": "#111c12",
+    "lang": "en-US"
   },
   "branding": {
-    "titleText": "ShadowClaw Template",
-    "faviconPath": "assets/icons/favicon.svg",
-    "appleTouchIconPath": "assets/icons/favicon.svg",
-    "notFoundPath": "404.html"
+    "titleText": "Block Garden - Knowledge Hub",
+    "siteUrl": "https://kherrick.github.io/block-garden-knowledge-hub/",
+    "repoUrl": "https://github.com/kherrick/block-garden-knowledge-hub",
+    "repoLabel": "Block Garden on GitHub",
+    "faviconPath": "assets/icons/favicon.ico",
+    "appleTouchIconPath": "assets/icons/apple-touch-icon.png",
+    "notFoundPath": "404.html",
+    "logoSlotHtml": "<svg class=\"header-title-logo\" viewBox=\"0 0 32 32\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16 2 L30 10 L16 18 L2 10 Z\" fill=\"#22c55e\"/><path d=\"M16 2 L30 10 L16 18 L2 10 Z\" fill=\"url(#grass-top)\"/><path d=\"M2 10 L16 18 L16 30 L2 22 Z\" fill=\"#854d0e\"/><path d=\"M16 18 L30 10 L30 22 L16 30 Z\" fill=\"#713f12\"/><path d=\"M2 10 L16 18 L16 21 L2 13 Z\" fill=\"#15803d\"/><path d=\"M16 18 L30 10 L30 13 L16 21 Z\" fill=\"#166534\"/><defs><linearGradient id=\"grass-top\" x1=\"2\" y1=\"2\" x2=\"30\" y2=\"18\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0%\" stop-color=\"#4ade80\"/><stop offset=\"100%\" stop-color=\"#16a34a\"/></linearGradient></defs></svg>"
   },
   "sitemapPath": "sitemap.xml",
   "assets": ["assets"],
   "sidebar": {
     "pagesHidden": false,
     "chatHidden": false,
-    "tasksHidden": false,
+    "tasksHidden": true,
     "filesHidden": false,
     "defaultPage": "pages"
+  },
+  "pages": {
+    "sortOrder": "asc",
+    "defaultPinnedPage": "/pages/main/index.html"
+  },
+  "theme": {
+    "stylesheet": "pages/main/theme.css"
+  },
+  "customElements": {
+    "allowedElements": ["block-garden", "block-garden-select"],
+    "allowedDomains": ["kherrick.github.io"],
+    "scripts": [
+      "pages/main/block-garden-adapter.js",
+      "https://kherrick.github.io/block-garden/block-garden-bundle-min.mjs"
+    ]
+  },
+  "security": {
+    "iframeSandbox": [
+      "allow-modals",
+      "allow-scripts",
+      "allow-popups",
+      "allow-popups-to-escape-sandbox",
+      "allow-same-origin"
+    ],
+    "workerSrc": ["'self'", "blob:", "data:"],
+    "connectSrc": ["'self'", "blob:", "data:", "https://kherrick.github.io"]
+  },
+  "settings": {
+    "assistantName": "BlockGardener"
   },
   "pwa": {
     "manifestPath": "manifest.json"

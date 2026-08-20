@@ -1,32 +1,242 @@
 ---
-title: "ShadowClaw Template"
+title: "Block Garden - Knowledge Hub"
 created: "1970-01-01T00:00:00Z"
 updated: "1970-01-01T00:00:00Z"
-slug: "shadow-claw-template"
+slug: "block-garden"
 ---
 
 <article>
-  <h2>Welcome to ShadowClaw Template</h2>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--shadow-claw-border-color);
+      padding-bottom: 1rem;
+    "
+  >
+    <div>
+      <h1
+        style="
+          margin: 0;
+          font-family: var(--block-garden-font-pixel);
+          color: var(--shadow-claw-accent-primary);
+          font-size: 1.75rem;
+        "
+      >
+        🌱 Block Garden
+      </h1>
+      <p
+        style="
+          margin: 0.25rem 0 0 0;
+          color: var(--shadow-claw-text-secondary);
+          font-size: 1rem;
+        "
+      >
+        A 3D sandbox exploration, building, and farming game engine
+      </p>
+    </div>
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap">
+      <span class="garden-badge garden-badge--emerald">v1.0 Sandbox</span>
+      <span class="garden-badge garden-badge--gold">Procedural Worlds</span>
+      <span class="garden-badge garden-badge--sky">Native Web Component</span>
+    </div>
+  </div>
+
+  <h2>🎮 Live Playable Game</h2>
   <p>
-    This site is built with
-    <a href="https://github.com/xt-ml/shadow-claw">ShadowClaw</a> and published
-    automatically via Github Actions
-  </p>
-  <p>
-    Content lives in pages/main/ as plain markdown files. Pushing to main
-    triggers a build that pre-renders each page into a fast, static site.
+    Explore Block Garden directly below via the native
+    <code>&lt;block-garden&gt;</code> custom element, dynamically loaded and
+    rendered securely inside ShadowClaw.
   </p>
 
-  <h2>Pages</h2>
+  <div class="game-frame-container" data-no-nav>
+    <div class="game-frame-header" data-no-nav>
+      <span class="game-frame-title">🌿 Block Garden Live Sandbox</span>
+      <div class="game-frame-controls" data-no-nav>
+        <button
+          type="button"
+          id="bg-expand-btn"
+          class="game-fullscreen-btn game-expand-btn"
+          data-action="toggle-expand"
+          title="Fill Parent Iframe"
+          aria-label="Fill Parent Iframe"
+          data-no-nav
+        >
+          <svg
+            class="expand-icon-maximize"
+            viewBox="0 0 24 24"
+            width="15"
+            height="15"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <path d="M15 3h6v6M9 21H3v-6" />
+          </svg>
+          <svg
+            class="expand-icon-minimize"
+            viewBox="0 0 24 24"
+            width="15"
+            height="15"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="display: none"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <path d="M21 9h-6V3M3 15h6v6" />
+          </svg>
+          <span class="game-expand-text">Fill Iframe</span>
+        </button>
+        <button
+          type="button"
+          id="bg-fullscreen-btn"
+          class="game-fullscreen-btn"
+          data-action="toggle-fullscreen"
+          title="Toggle Fullscreen Window (F)"
+          aria-label="Toggle Fullscreen Window"
+          data-no-nav
+        >
+          <svg
+            class="fullscreen-icon-expand"
+            viewBox="0 0 24 24"
+            width="15"
+            height="15"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
+            />
+          </svg>
+          <svg
+            class="fullscreen-icon-compress"
+            viewBox="0 0 24 24"
+            width="15"
+            height="15"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="display: none"
+          >
+            <path
+              d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"
+            />
+          </svg>
+          <span class="game-fullscreen-text">Fullscreen</span>
+        </button>
+      </div>
+    </div>
+    <block-garden id="live-block-garden" data-no-nav></block-garden>
+  </div>
+
+  <h2>✨ Engine Features</h2>
+  <div class="garden-grid">
+    <div class="garden-card">
+      <h3>🌍 Procedural Worlds</h3>
+      <p>
+        Uniquely seeded 3D voxel terrain with simplex noise heightmaps, dynamic
+        biomes, underground caves, and celestial sky clouds.
+      </p>
+    </div>
+    <div class="garden-card">
+      <h3>🌾 Farming & Cultivation</h3>
+      <p>
+        Multi-stage crop growth cycles, tilled soil hydration, seed planting,
+        harvesting, and botanical resource management.
+      </p>
+    </div>
+    <div class="garden-card">
+      <h3>⛏️ Mining & Resources</h3>
+      <p>
+        Dig through surface soil, bedrock, coal seams, iron veins, and precious
+        gold deposits to build intricate structures.
+      </p>
+    </div>
+    <div class="garden-card">
+      <h3>🔌 Modular ES6 API</h3>
+      <p>
+        Dynamic runtime module loading, procedural drawing effects, game state
+        bookmarklets, and custom scripting.
+      </p>
+    </div>
+  </div>
+
+  <h2>⌨️ Quick Controls</h2>
+  <div class="garden-grid">
+    <div class="garden-card">
+      <h3>🚶 Movement & Camera</h3>
+      <ul style="padding-left: 1.25rem; margin: 0.5rem 0">
+        <li>
+          <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> — Move forward /
+          left / back / right
+        </li>
+        <li><kbd>Space</kbd> — Jump / Ascend</li>
+        <li><kbd>Shift</kbd> — Descend</li>
+        <li><kbd>K</kbd> — Toggle Flight Mode</li>
+        <li><kbd>Arrow Keys</kbd> — Rotate Camera</li>
+      </ul>
+    </div>
+    <div class="garden-card">
+      <h3>🛠️ World Interaction</h3>
+      <ul style="padding-left: 1.25rem; margin: 0.5rem 0">
+        <li><kbd>Left Click (Hold)</kbd> — Break Block</li>
+        <li><kbd>Right Click</kbd> / <kbd>Enter</kbd> — Place Block</li>
+        <li><kbd>~</kbd> / <kbd>`</kbd> — Cycle Block Type</li>
+        <li><kbd>E</kbd> / <kbd>I</kbd> — Open Inventory</li>
+        <li><kbd>M</kbd> — Toggle Hotbar</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>📚 Knowledge Hub Chapters</h2>
   <ul>
-    <li><a href="/main/about">About</a></li>
+    <li>
+      <a href="/main/about">Chapter 1: Architecture & Procedural Engine</a>
+    </li>
+    <li>
+      <a href="/main/controls"
+        >Chapter 2: Gameplay Controls, Modes & Save Ecosystem</a
+      >
+    </li>
+    <li>
+      <a href="/main/farming-and-botany"
+        >Chapter 3: Farming Mechanics & Botanical Species</a
+      >
+    </li>
+    <li>
+      <a href="/main/api-examples"
+        >Chapter 4: Public Modding API & Script Gallery</a
+      >
+    </li>
+    <li>
+      <a href="/main/demos-and-media"
+        >Chapter 5: Video Demos & Media Showcase</a
+      >
+    </li>
+    <li>
+      <a href="/main/world-saves-and-pdfs"
+        >Chapter 6: PDF World Saves & Postcard Gallery</a
+      >
+    </li>
+    <li>
+      <a href="/main/memory">Master Technical Memory & DeepWiki Reference</a>
+    </li>
   </ul>
-  <h2>How it works</h2>
-  <ol>
-    <li>Write markdown in pages/main/.</li>
-    <li>Optionally configure pretty-path URLs in pages/routes.json.</li>
-    <li>Push to main — Github Actions builds and deploys automatically.</li>
-  </ol>
 
   <hr
     style="

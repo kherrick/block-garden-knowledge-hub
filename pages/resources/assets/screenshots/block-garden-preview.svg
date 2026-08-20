@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" fill="none">
+  <rect width="1280" height="720" fill="#09110a"/>
+  <rect x="20" y="20" width="1240" height="680" rx="12" fill="#111c12" stroke="#1f3322" stroke-width="2"/>
+  <!-- Top bar -->
+  <rect x="20" y="20" width="1240" height="56" rx="12" fill="#0d160e" stroke="#1f3322" stroke-width="1"/>
+  <circle cx="50" cy="48" r="6" fill="#ef4444"/>
+  <circle cx="70" cy="48" r="6" fill="#eab308"/>
+  <circle cx="90" cy="48" r="6" fill="#22c55e"/>
+  <text x="120" y="53" fill="#a7f3d0" font-family="monospace" font-size="16" font-weight="600">Block Garden - Knowledge Hub 3D Sandbox</text>
+  <!-- Content Preview Grid -->
+  <rect x="50" y="100" width="280" height="570" rx="8" fill="#162518" stroke="#1f3322"/>
+  <rect x="350" y="100" width="880" height="570" rx="8" fill="#0d160e" stroke="#1f3322"/>
+  <!-- Isometric Sandbox Art -->
+  <g transform="translate(680, 260) scale(1.2)">
+    <path d="M160 20 L300 100 L160 180 L20 100 Z" fill="#22c55e"/>
+    <path d="M20 100 L160 180 L160 300 L20 220 Z" fill="#854d0e"/>
+    <path d="M160 180 L300 100 L300 220 L160 300 Z" fill="#713f12"/>
+  </g>
+  <text x="790" y="580" text-anchor="middle" fill="#22c55e" font-family="sans-serif" font-size="24" font-weight="bold">Interactive 3D Voxel Sandbox Engine</text>
+</svg>
