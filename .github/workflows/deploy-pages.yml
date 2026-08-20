@@ -6,9 +6,18 @@
 #   pages/
 #     main/                              ← your markdown / HTML pages
 #     routes.json                        ← optional pretty-path config
+#     site-config.json                   ← optional declarative site configuration
 #
 # Required GitHub repo settings:
 #   Settings → Pages → Source: GitHub Actions
+#
+# Version Pinning:
+#   You can pin ShadowClaw to a specific release tag (e.g. "v1.20.0"),
+#   commit SHA (e.g. "62253c53"), or branch ("main") via:
+#   1. `shadowClawVersion` in `pages/site-config.json`
+#   2. `.shadowclaw-version` file in repository root
+#   3. `SHADOWCLAW_REF` environment variable in this workflow
+#   4. `shadowclaw_ref` input when manually running via Actions UI (workflow_dispatch)
 #
 # Required secrets / variables:
 #   None — GITHUB_TOKEN is granted pages:write automatically by the
@@ -27,6 +36,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      shadowclaw_ref:
+        description: "ShadowClaw version tag (e.g. v1.20.0), commit SHA, or branch"
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -46,11 +60,38 @@ jobs:
         with:
           path: content
 
+      - name: Resolve ShadowClaw version / ref
+        id: resolve-ref
+        shell: bash
+        run: |
+          REF="${{ github.event.inputs.shadowclaw_ref }}"
+          if [ -z "$REF" ] && [ -f "content/pages/site-config.json" ]; then
+            REF=$(node -e '
+              try {
+                const fs = require("fs");
+                const cfg = JSON.parse(fs.readFileSync("content/pages/site-config.json", "utf8"));
+                const v = cfg.shadowClawVersion || cfg.shadowClawRef || cfg.shadowclawVersion || cfg.shadowclawRef || "";
+                process.stdout.write(String(v).trim());
+              } catch (e) {
+                process.stdout.write("");
+              }
+            ')
+          fi
+          if [ -z "$REF" ] && [ -f "content/.shadowclaw-version" ]; then
+            REF=$(tr -d ' \n\r\t' < content/.shadowclaw-version)
+          fi
+          if [ -z "$REF" ]; then
+            REF="${SHADOWCLAW_REF:-main}"
+          fi
+          echo "Resolved ShadowClaw ref: $REF"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+
       - name: Checkout ShadowClaw core (build toolchain)
         uses: actions/checkout@v4
         with:
           repository: xt-ml/shadow-claw
           path: shadow-claw
+          ref: ${{ steps.resolve-ref.outputs.ref }}
 
       - uses: actions/setup-node@v4
         with:
@@ -66,6 +107,10 @@ jobs:
         run: |
           rm -rf shadow-claw/pages
           cp -r content/pages shadow-claw/
+          if [ -d "content/assets" ]; then cp -r content/assets shadow-claw/; fi
+          if [ -f "content/404.html" ]; then cp content/404.html shadow-claw/pages/; fi
+          if [ -f "content/manifest.json" ]; then cp content/manifest.json shadow-claw/pages/; fi
+          if [ -f "content/sitemap.xml" ]; then cp content/sitemap.xml shadow-claw/pages/; fi
 
       - name: Build production bundle
         working-directory: shadow-claw

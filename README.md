@@ -22,22 +22,85 @@ No ShadowClaw source lives in this repo — only your content and the workflow.
 2. In your new repo, go to **Settings → Pages → Source** and select
    **GitHub Actions**.
 3. Drop your markdown files into `pages/main/`.
-4. Optionally edit `pages/routes.json` to add pretty-path URLs.
-5. Push to `main` — the workflow builds and deploys automatically.
+4. Optionally configure `pages/site-config.json` for site branding, sidebar navigation visibility, and page sort order.
+5. Optionally edit `pages/routes.json` to add pretty-path URLs.
+6. Push to `main` — the workflow builds and deploys automatically.
 
 ## Directory layout
 
-```
+```txt
 pages/
   main/
     index.md          ← your home page
     ~/content/
       about.md        ← any other pages
+  site-config.json    ← declarative site metadata, branding & navigation config
   routes.json         ← optional pretty-path configuration
 .github/
   workflows/
     deploy-pages.yml  ← the build + deploy workflow (no changes needed)
 ```
+
+## Declarative Site Configuration (`site-config.json`)
+
+Configure your site metadata, branding, navigation visibility, and sorting declaratively without touching source code:
+
+```json
+{
+  "site": {
+    "title": "My Site",
+    "description": "Published with ShadowClaw",
+    "themeColor": "#121212",
+    "lang": "en"
+  },
+  "branding": {
+    "titleText": "My Project",
+    "siteUrl": "https://example.com",
+    "repoUrl": "https://github.com/my-user/my-project"
+  },
+  "sidebar": {
+    "pagesHidden": false,
+    "chatHidden": true,
+    "tasksHidden": true,
+    "filesHidden": true,
+    "defaultPage": "pages"
+  },
+  "pages": {
+    "sortOrder": "desc"
+  },
+  "customElements": {
+    "allowedElements": ["block-garden", "block-garden-select", "x-pwgen"],
+    "allowedDomains": ["kherrick.github.io", "xt-ml.github.io"],
+    "scripts": [
+      "https://kherrick.github.io/block-garden/block-garden-bundle-min.mjs"
+    ]
+  }
+}
+```
+
+### Custom Element & Script Security (`customElements`)
+
+ShadowClaw enforces a deny-by-default security stance on custom elements and external scripts rendered within articles and pages. Site authors can declare approved elements and trusted host domains in `customElements`:
+
+- `allowedElements`: List of custom element tag names permitted in page markup and HTML sanitization (e.g. `["block-garden", "block-garden-select"]`). Unapproved custom elements are blocked from registration and stripped from the DOM.
+- `allowedDomains`: List of approved domains or wildcard patterns (e.g. `["kherrick.github.io", "*.github.io"]`) permitted to load scripts or custom element bundles.
+- `scripts`: Array of approved script URLs (or objects `{ "src": "...", "type": "module" }`) to preload at build time and on boot.
+
+### Version Pinning (`shadowClawVersion`)
+
+You can pin your site to a specific ShadowClaw release tag (e.g. `v1.20.0`) or git commit SHA (e.g. `62253c53`) to ensure reproducible builds over time:
+
+```json
+{
+  "shadowClawVersion": "v1.20.0"
+}
+```
+
+Alternatively, you can place a `.shadowclaw-version` file in the root of your content repository or provide the `shadowclaw_ref` parameter when triggering the GitHub Actions workflow manually.
+
+### Sidebar Visibility Options
+
+You can hide or show individual sidebar navigation items (`pagesHidden`, `chatHidden`, `tasksHidden`, `filesHidden`) and set the default landing section (`defaultPage`: `"pages"` | `"chat"` | `"tasks"` | `"files"`). When hidden, the corresponding section is hidden from the sidebar at build time and on first boot.
 
 ## Pretty paths (`routes.json`)
 
@@ -61,7 +124,7 @@ server-side rewrites.
 > ShadowClaw's own router and **must not** be used as pretty path prefixes:
 > `/`, `/chat`, `/files`, `/tasks`, `/pages`, `/settings`, `/tools`, `/channels`.
 > Additionally, `/` (root) is reserved as the default pinned page and is
-> unreachable as a pretty path. Use a safe namespace like `/main/`, `/blog/`,
+> unreachable as a pretty path. Use a safe namespace like `/main/`, `/articles/`,
 > `/docs/`, or any other prefix that doesn't conflict with the above list.
 
 ## Default Pinned Page (`/`)
@@ -72,7 +135,7 @@ When a visitor loads the root URL (`/`) of your published site, ShadowClaw autom
 
 1. Both the static site build pipeline (`prerender-dsd-shell`) and runtime page store (`orchestratorStore`) collect all files in `pages/main/`.
 2. `MEMORY.md` is always sorted to the bottom of the list.
-3. All other pages are sorted in **reverse alphabetical order** (case-insensitive, Z to A).
+3. All other pages are sorted by `pages.sortOrder` from `site-config.json` (`"desc"` by default, natural numeric, or `"asc"`).
 4. The first file in this sorted list (`pages[0]`) becomes the **default page** pre-rendered into the DSD shell at `/`.
 
 ### How to ensure your home page is at `/`:
