@@ -5,7 +5,7 @@ updated: "1970-01-01T00:00:00Z"
 slug: "about"
 ---
 
-# 📖 Chapter 1: Architecture & Procedural Engine
+## 📖 Chapter 1: Architecture & Procedural Engine
 
 Welcome to **Chapter 1** of the Block Garden Knowledge Hub! This chapter provides a deep architectural breakdown of how Block Garden operates under the hood — from worker-threaded terrain synthesis to volumetric light propagation and zero-framework signal reactivity.
 
@@ -67,8 +67,12 @@ Block Garden generates infinite, deterministic 3D voxel landscapes from a single
 
 1. **Seeded Noise Pipeline**: Seeded 3D Simplex noise (`src/utils/noise.mjs` using `alea` PRNG) ensures world seeds are 100% reproducible and shareable across devices.
 2. **Layered Terrain Topography**: Blends base terrain noise, 3D mountain shaping, hilliness octaves, and lake depressions to create organic cliffs, valleys, and deep lakes.
-3. **Subterranean Cavern Carving**: Carves complex tunnel networks and caverns while evaluating surface depth heuristics and enforcing a **Lava Protection Zone** (`y > LAVA_HEIGHT + LAVA_PROTECTION_ZONE`), so caves never accidentally breach lava pockets.
-4. **Y-Level Mineral Veins**: Ores are evaluated strictly by Y-level depth in decreasing order of rarity (Diamond ► Silver ► Gold ► Copper ► Iron ► Coal) to prevent common ores from overwriting rare deposits.
+3. **Subterranean Cavern Carving**: Carves complex tunnel networks and caverns while evaluating surface depth heuristics and enforcing a **Lava Protection Zone** (`Y = LAVA_HEIGHT + LAVA_PROTECTION_ZONE = 3 + 12 = 15`), ensuring caves never breach the deep lava layer.
+4. **Y-Level Mineral Veins**: Ores are evaluated strictly by Y-level depth in order of rarity:
+   - **Gold**: Depths 30–70 blocks, requiring high noise threshold (`oreNoise > 0.8`).
+   - **Iron**: Depths 20–60 blocks (`oreNoise > 0.65`).
+   - **Coal**: Depths 10–50 blocks (`oreNoise > 0.55`).
+   - Also includes Diamond, Silver, and Copper veins.
 5. **Off-Thread Worker Pool**: `ChunkManager` delegates chunk synthesis off the main UI thread to a dedicated pool of Web Workers (`terrain.worker.mjs`), sized dynamically to `navigator.hardwareConcurrency`.
 
 ---

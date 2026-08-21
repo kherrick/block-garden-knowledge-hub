@@ -5,7 +5,7 @@ updated: "1970-01-01T00:00:00Z"
 slug: "controls"
 ---
 
-# 📖 Chapter 2: Controls, Modes & Save Ecosystem
+## 📖 Chapter 2: Controls, Modes & Save Ecosystem
 
 Welcome to **Chapter 2**! Here you will find the complete reference for playing Block Garden across Desktop and Mobile devices, switching game modes, and taking advantage of Block Garden's privacy-first save ecosystem.
 

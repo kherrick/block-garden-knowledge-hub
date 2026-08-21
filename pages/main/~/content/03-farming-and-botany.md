@@ -5,7 +5,7 @@ updated: "1970-01-01T00:00:00Z"
 slug: "farming-and-botany"
 ---
 
-# 📖 Chapter 3: Farming Mechanics & Botanical Species
+## 📖 Chapter 3: Farming Mechanics & Botanical Species
 
 Welcome to **Chapter 3**! Unlike standard sandbox engines focused solely on block destruction, Block Garden features an intricate **plant cultivation and farming engine** (`src/core/systems/plantGrowth.mjs`).
 

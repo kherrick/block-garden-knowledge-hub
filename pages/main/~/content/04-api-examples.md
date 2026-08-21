@@ -5,7 +5,7 @@ updated: "1970-01-01T00:00:00Z"
 slug: "api-examples"
 ---
 
-# 📖 Chapter 4: Public Modding API & Script Gallery
+## 📖 Chapter 4: Public Modding API & Script Gallery
 
 Welcome to **Chapter 4**! Block Garden is designed from the ground up as an **open, extensible Web engine**. Developers can write custom scripts, procedural shaders, and full interactive game mods using Block Garden's public API surface (`src/api/BlockGarden.mjs`).
 

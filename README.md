@@ -1,187 +1,117 @@
-# ShadowClaw Template
+# 🌱 Block Garden Knowledge Hub
 
-This is a starter template for publishing your own static site using
-[ShadowClaw](https://github.com/xt-ml/shadow-claw) as the build engine.
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/kherrick/block-garden)
+[![Live Game](https://img.shields.io/badge/Play_Live-Block_Garden-2e7d32?style=flat&logo=html5)](https://kherrick.github.io/block-garden/)
 
-## How it works
+Welcome to the official **Block Garden Knowledge Hub**! This project is an exhaustive, interactive documentation portal and technical reference guide for **Block Garden**—a full-featured 3D voxel sandbox exploration, building, and farming game engine built entirely with modern vanilla Web technologies.
 
-1. You write your content as markdown (`.md`) or HTML (`.html`) files under
-   `pages/main/`.
-2. When you push to `main`, the included GitHub Actions workflow:
-   - Checks out ShadowClaw's source as a **build dependency** (not redistributed).
-   - Copies your `pages/` into the build root.
-   - Runs `npm run build:prod` with your repo's GitHub Pages URL injected
-     automatically.
-   - Deploys `dist/public/` to GitHub Pages via `actions/deploy-pages`.
+> 🚀 **Fast Links to the Block Garden Knowledge Hub Chapters**:
+>
+> - 🌐 **[Knowledge Hub Home Page](https://kherrick.github.io/block-garden-knowledge-hub/main)** (`/main`)
+> - 📖 **[Chapter 1: Architecture & Procedural Engine](https://kherrick.github.io/block-garden-knowledge-hub/main/about)** (`/main/about`)
+> - 🕹️ **[Chapter 2: Gameplay Controls, Game Modes & Save Ecosystem](https://kherrick.github.io/block-garden-knowledge-hub/main/controls)** (`/main/controls`)
+> - 🌾 **[Chapter 3: Farming Mechanics & Botanical Species](https://kherrick.github.io/block-garden-knowledge-hub/main/farming-and-botany)** (`/main/farming-and-botany`)
+> - 🔌 **[Chapter 4: Public Modding API & Script Gallery](https://kherrick.github.io/block-garden-knowledge-hub/main/api-examples)** (`/main/api-examples`)
+> - 🎥 **[Chapter 5: Video Demos & Media Showcase](https://kherrick.github.io/block-garden-knowledge-hub/main/demos-and-media)** (`/main/demos-and-media`)
+> - 📄 **[Chapter 6: PDF World Saves & Postcard Gallery](https://kherrick.github.io/block-garden-knowledge-hub/main/world-saves-and-pdfs)** (`/main/world-saves-and-pdfs`)
+> - ⚡ **[Chapter 7: Web Platform Breakdown & Performance Engineering](https://kherrick.github.io/block-garden-knowledge-hub/main/web-platform-and-performance)** (`/main/web-platform-and-performance`)
+> - 🧠 **[Master Technical Memory & Architecture Reference](https://kherrick.github.io/block-garden-knowledge-hub/main/memory)** (`/main/memory`)
 
-No ShadowClaw source lives in this repo — only your content and the workflow.
+---
 
-## Quick start
+## 📸 Media Showcase & Engine Assets
 
-1. Click **Use this template** on GitHub (or fork/clone).
-2. In your new repo, go to **Settings → Pages → Source** and select
-   **GitHub Actions**.
-3. Drop your markdown files into `pages/main/`.
-4. Optionally configure `pages/resources/site-config.json` for site branding, sidebar navigation visibility, and page sort order.
-5. Optionally edit `pages/resources/routes.json` to add pretty-path URLs.
-6. Push to `main` — the workflow builds and deploys automatically.
+Below is the complete catalog of official **Block Garden** visual assets, animated demonstrations, screenshots, and downloadable PDF save postcards.
 
-## Directory layout
+### 🎮 Gameplay Animation
 
-```txt
-pages/
-  main/
-    index.md          ← your home page
-    ~/content/
-      about.md        ← any other pages
-  resources/          ← root level files & resources (site-config.json, routes.json, 404.html, manifest.json, sitemap.xml / sitemap.txt, favicon.svg, assets/)
-.github/
-  workflows/
-    deploy-pages.yml  ← the build + deploy workflow (no changes needed)
+![Block Garden Gameplay Animation](https://kherrick.github.io/block-garden/assets/block-garden-animation.gif)
+
+### 🎆 Fireworks Particle Mod Demo
+
+![Block Garden Fireworks Animation](https://kherrick.github.io/block-garden/assets/block-garden-fireworks.gif)
+
+### 🏞️ Screenshots
+
+[![Block Garden](https://kherrick.github.io/block-garden/assets/screenshots/block-garden-screenshot-2266x1440.png)](https://kherrick.github.io/block-garden/) | [![Block Garden Square](https://kherrick.github.io/block-garden/assets/screenshots/block-garden-screenshot-1621x1621.png)](https://kherrick.github.io/block-garden/)
+
+### 💾 Included PDF Game Saves & Postcards
+
+Click any world postcard below to launch Block Garden with the PDF save pre-loaded:
+
+| World Name                   |                                                                                                                                              Screenshot Preview                                                                                                                                              |                                                                                Live Play Link                                                                                |                                                    PDF Download                                                    |
+| :--------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------: |
+| 🌿 **The Garden**            |                 [![The Garden](https://kherrick.github.io/block-garden/assets/screenshots/block-garden-screenshot-the-garden-400x400.png)](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/The-Garden.pdf)                  |     [Play "The Garden"](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/The-Garden.pdf)     |            [`The-Garden.pdf`](https://kherrick.github.io/block-garden/assets/game-saves/The-Garden.pdf)            |
+| 🕳️ **Caves**                 |                         [![Caves](https://kherrick.github.io/block-garden/assets/screenshots/block-garden-screenshot-caves-400x400.png)](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Caves.pdf)                         |          [Play "Caves"](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Caves.pdf)          |                 [`Caves.pdf`](https://kherrick.github.io/block-garden/assets/game-saves/Caves.pdf)                 |
+| 🌸 **Flowers**               |                      [![Flowers](https://kherrick.github.io/block-garden/assets/screenshots/block-garden-screenshot-flowers-400x400.png)](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Flowers.pdf)                      |        [Play "Flowers"](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Flowers.pdf)        |               [`Flowers.pdf`](https://kherrick.github.io/block-garden/assets/game-saves/Flowers.pdf)               |
+| ☁️ **Gateway To The Clouds** | [![Gateway To The Clouds](https://kherrick.github.io/block-garden/assets/screenshots/block-garden-screenshot-gateway-to-the-clouds-400x400.png)](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Gateway-To-The-Clouds.pdf) | [Play "Gateway"](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Gateway-To-The-Clouds.pdf) | [`Gateway-To-The-Clouds.pdf`](https://kherrick.github.io/block-garden/assets/game-saves/Gateway-To-The-Clouds.pdf) |
+
+---
+
+## 🏛️ Core Capabilities & Architecture Summary
+
+Block Garden stands out as a pioneering **Web-Platform-as-OS** reference implementation:
+
+- 🌍 **Procedural 3D World Generation**: Multi-octave 3D Simplex noise with `alea` PRNG seed determinism.
+- 🧵 **Multi-Threaded Worker Pool**: Chunk generation offloaded to Web Workers (`terrain.worker.mjs`), dynamically sized to `navigator.hardwareConcurrency`.
+- ⛏️ **Depth-Based Ore Distribution**:
+  - **Gold**: Depths 30–70 (`oreNoise > 0.8`)
+  - **Iron**: Depths 20–60 (`oreNoise > 0.65`)
+  - **Coal**: Depths 10–50 (`oreNoise > 0.55`)
+  - Also includes Diamond, Silver, and Copper veins with a **Lava Protection Zone** ($Y \le 15$).
+- 💡 **Volumetric BFS Lighting**: Per-voxel `Uint8Array` (`LightMap`) calculating 3D attenuation and boundary-aware cross-chunk light propagation.
+- ⚡ **Zero-VDOM Signal Reactivity**: Driven by `signal-polyfill` (`Signal.State`, `Signal.Computed`), powering Shadow DOM Web Components without re-rendering overhead.
+- 🌾 **Farming Engine & 20+ Botanical Species**: Evaluates soil types (dirt, farmland, sand, clay, water), soil hydration, BFS light levels, and growth ticks for wheat, corn, carrots, pumpkins, roses, sunflowers, bamboo, cacti, trees, mushrooms, and aquatic plants.
+- 💾 **Privacy-First PDF Postcards**: World saves encoded to gzip JSON, embedded into custom PNG `tEXt` chunks (`gamestate`) with CRC32 checksums, and rendered onto printable PDF postcards with `pdf-lib`.
+- 🔌 **Public Modding API**: Extensible runtime scripting API (`src/api/BlockGarden.mjs`) supporting one-click bookmarklets and live browser console script execution.
+
+---
+
+## 🕹️ Controls Reference
+
+| Action              | Desktop Key                   | Mobile Gesture      | Description                    |
+| :------------------ | :---------------------------- | :------------------ | :----------------------------- |
+| **Move**            | `W` `A` `S` `D`               | On-Screen Touch Pad | Movement in 3D world           |
+| **Look / Camera**   | `Arrow Keys` / Mouse Lock     | Touch Drag          | Rotate 360° camera             |
+| **Jump / Ascend**   | `Space`                       | Touch Button        | Jump or fly upward             |
+| **Descend / Sneak** | `Shift`                       | Touch Button        | Sneak or descend in flight     |
+| **Toggle Flight**   | `K`                           | Touch Toggle        | Enable Creative flight mode    |
+| **Break Block**     | `Left Click` (Hold) / `Enter` | Touch & Hold        | Mine targeted voxel block      |
+| **Place Block**     | `Right Click` / `Enter`       | Single Tap          | Place selected hotbar material |
+| **Cycle Material**  | `~` or `` ` ``                | Material Bar        | Switch active hotbar slot      |
+| **Hotbar Slots**    | `1` – `9`                     | Hotbar Tap          | Direct hotbar slot selection   |
+| **Inventory**       | `E` / `I`                     | UI Button           | Open material & seed inventory |
+| **Hotbar Toggle**   | `M`                           | UI Button           | Show / hide hotbar UI          |
+| **World Gen Menu**  | `Ctrl` + `S`                  | Menu                | Configure seed & generator     |
+| **Konami Code**     | `↑↑↓↓←→←→BA`                  | —                   | Unlock Dev Mode & Ore Locator  |
+
+---
+
+## 📦 How to Run & Build
+
+### Run Knowledge Hub Locally
+
+```sh
+npm install
+npm run dev
 ```
 
-## Declarative Site Configuration (`site-config.json`)
+### Run Block Garden Locally
 
-Configure your site metadata, branding, navigation visibility, and sorting declaratively without touching source code:
-
-```json
-{
-  "site": {
-    "title": "My Site",
-    "description": "Published with ShadowClaw",
-    "themeColor": "#121212",
-    "lang": "en"
-  },
-  "branding": {
-    "titleText": "My Project",
-    "siteUrl": "https://example.com",
-    "repoUrl": "https://github.com/my-user/my-project"
-  },
-  "sidebar": {
-    "pagesHidden": false,
-    "chatHidden": true,
-    "tasksHidden": true,
-    "filesHidden": true,
-    "defaultPage": "pages"
-  },
-  "pages": {
-    "sortOrder": "desc"
-  },
-  "customElements": {
-    "allowedElements": ["block-garden", "block-garden-select", "x-pwgen"],
-    "allowedDomains": ["kherrick.github.io", "xt-ml.github.io"],
-    "scripts": [
-      "https://kherrick.github.io/block-garden/block-garden-bundle-min.mjs"
-    ]
-  }
-}
+```sh
+cd ../block-garden
+npm install
+npm start              # Starts dev server on http://localhost:3000
+npm test               # Run Jest test suite
+npx rollup -c          # Build ES module production bundle
 ```
 
-### Custom Element & Script Security (`customElements`)
+---
 
-ShadowClaw enforces a deny-by-default security stance on custom elements and external scripts rendered within articles and pages. Site authors can declare approved elements and trusted host domains in `customElements`:
+## 🔗 Project Links
 
-- `allowedElements`: List of custom element tag names permitted in page markup and HTML sanitization (e.g. `["block-garden", "block-garden-select"]`). Unapproved custom elements are blocked from registration and stripped from the DOM.
-- `allowedDomains`: List of approved domains or wildcard patterns (e.g. `["kherrick.github.io", "*.github.io"]`) permitted to load scripts or custom element bundles.
-- `scripts`: Array of approved script URLs (or objects `{ "src": "...", "type": "module" }`) to preload at build time and on boot.
-
-### Version Pinning (`shadowClawVersion`)
-
-You can pin your site to a specific ShadowClaw release tag (e.g. `v1.20.0`) or git commit SHA (e.g. `62253c53`) to ensure reproducible builds over time:
-
-```json
-{
-  "shadowClawVersion": "v1.20.0"
-}
-```
-
-Alternatively, you can place a `.shadowclaw-version` file in the root of your content repository or provide the `shadowclaw_ref` parameter when triggering the GitHub Actions workflow manually.
-
-### Sidebar Visibility Options
-
-You can hide or show individual sidebar navigation items (`pagesHidden`, `chatHidden`, `tasksHidden`, `filesHidden`) and set the default landing section (`defaultPage`: `"pages"` | `"chat"` | `"tasks"` | `"files"`). When hidden, the corresponding section is hidden from the sidebar at build time and on first boot.
-
-## Pretty paths (`routes.json`)
-
-Map source files to clean URLs:
-
-```json
-{
-  "routes": {
-    "/pages/main/index.md": { "prettyPath": "/main" },
-    "/pages/main/~/content/about.md": { "prettyPath": "/main/about" },
-    "/pages/main/MEMORY.md": { "prettyPath": "/main/memory" }
-  }
-}
-```
-
-The prerender pipeline generates a physical `index.html` for every mapped path
-so direct links and page refreshes work correctly on GitHub Pages without any
-server-side rewrites.
-
-> **Reserved path prefixes** — the following first-path-segments are owned by
-> ShadowClaw's own router and **must not** be used as pretty path prefixes:
-> `/`, `/chat`, `/files`, `/tasks`, `/pages`, `/settings`, `/tools`, `/channels`.
-> Additionally, `/` (root) is reserved as the default pinned page and is
-> unreachable as a pretty path. Use a safe namespace like `/main/`, `/articles/`,
-> `/docs/`, or any other prefix that doesn't conflict with the above list.
-
-## Default Pinned Page (`/`)
-
-When a visitor loads the root URL (`/`) of your published site, ShadowClaw automatically displays the **default pinned page**.
-
-### How ShadowClaw selects the default page for `/`:
-
-1. Both the static site build pipeline (`prerender-dsd-shell`) and runtime page store (`orchestratorStore`) collect all files in `pages/main/`.
-2. `MEMORY.md` is always sorted to the bottom of the list.
-3. All other pages are sorted by `pages.sortOrder` from `site-config.json` (`"desc"` by default, natural numeric, or `"asc"`).
-4. The first file in this sorted list (`pages[0]`) becomes the **default page** pre-rendered into the DSD shell at `/`.
-
-### How to ensure your home page is at `/`:
-
-Name your primary home page file so it sorts first in reverse-alphabetical order relative to your other page files in `pages/main/`:
-
-- `index.md` or `index.html` will sort ahead of `about.md`, `contact.md`, or `faq.md`.
-- If you have files starting with letters after `i` (e.g. `welcome.md` or `z-post.md`), `welcome.md` will sort ahead of `index.md`. Name your landing page accordingly (or use e.g. `index.md` alongside lower-alphabetical files).
-
-## Custom domain
-
-If you use a custom apex domain (e.g. `example.com`), override the two URL env
-vars in the workflow:
-
-```yaml
-env:
-  PAGES_ORIGIN: "https://example.com/"
-  PAGES_BASE_PATH: "/"
-```
-
-## In-browser automation (optional)
-
-You can drive publishing from inside the ShadowClaw app itself using a
-`type: "tools"` task chain — no LLM calls required:
-
-```json
-{
-  "type": "tools",
-  "tools": [
-    {
-      "name": "write_file",
-      "input": {
-        "path": "repos/my-site/pages/main/post.md",
-        "content": "# Hello\n\nContent."
-      }
-    },
-    {
-      "name": "git_add",
-      "input": { "repo": "my-site", "files": ["pages/main/post.md"] }
-    },
-    {
-      "name": "git_commit",
-      "input": { "repo": "my-site", "message": "publish: new post" }
-    },
-    { "name": "git_push", "input": { "repo": "my-site" } }
-  ]
-}
-```
-
-Pushing triggers the workflow, which builds and publishes the site automatically.
+- 🎮 **Live Web Game**: [kherrick.github.io/block-garden](https://kherrick.github.io/block-garden/)
+- ⚡ **Unbundled Runtime**: [kherrick.github.io/block-garden/index_unbundled.html](https://kherrick.github.io/block-garden/index_unbundled.html)
+- 📦 **Block Garden Repo**: [github.com/kherrick/block-garden](https://github.com/kherrick/block-garden)
+- 🕹️ **Itch.io Release**: [karlherrick.itch.io/block-garden](https://karlherrick.itch.io/block-garden)
+- 🎨 **API Examples**: [kherrick.github.io/block-garden/src/api/examples/](https://kherrick.github.io/block-garden/src/api/examples/)

@@ -5,7 +5,7 @@ updated: "1970-01-01T00:00:00Z"
 slug: "block-garden-memory"
 ---
 
-# 🧠 Block Garden Memory & Architecture Reference
+## 🧠 Block Garden Memory & Architecture Reference
 
 Welcome to the **Block Garden Premier Technical Memory**. This document captures the core architecture, procedural rules, lighting engines, reactivity primitives, persistence mechanisms, and modding interfaces for Block Garden.
 
@@ -78,4 +78,4 @@ Entering the Konami code sequence (`Up Up Down Down Left Right Left Right B A`) 
 
 ---
 
-⬅️ [Previous Page](/main/world-saves-and-pdfs)
+⬅️ [Previous Page](/main/web-platform-and-performance)

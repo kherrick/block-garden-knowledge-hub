@@ -5,7 +5,7 @@ updated: "1970-01-01T00:00:00Z"
 slug: "world-saves-and-pdfs"
 ---
 
-# 📖 Chapter 6: PDF World Saves & Postcard Gallery
+## 📖 Chapter 6: PDF World Saves & Postcard Gallery
 
 Welcome to **Chapter 6**! Block Garden features a revolutionary **PDF Save Game format**. World saves are exported as human-readable PDF postcards containing rendered screenshots, world statistics, and a complete gzip-compressed game state embedded inside custom PNG image chunks.
 
@@ -88,4 +88,4 @@ An architectural sky tower rising from sea level through the cloud layer into ae
 
 ---
 
-⬅️ [Previous Page](/main/demos-and-media) | ➡️ [Next Page](/main/memory)
+⬅️ [Previous Page](/main/demos-and-media) | ➡️ [Next Page](/main/web-platform-and-performance)

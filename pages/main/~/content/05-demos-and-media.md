@@ -5,7 +5,7 @@ updated: "1970-01-01T00:00:00Z"
 slug: "demos-and-media"
 ---
 
-# 📖 Chapter 5: Video Demos & Media Showcase
+## 📖 Chapter 5: Video Demos & Media Showcase
 
 Welcome to **Chapter 5**! This showcase highlights the official video demonstrations for Block Garden, featuring interactive mod scripts, plant growth animations, and aerial sky construction.
 
@@ -16,13 +16,13 @@ Welcome to **Chapter 5**! This showcase highlights the official video demonstrat
 Experience the particle engine capabilities of Block Garden with the `Fireworks.mjs` API module launching explosive night sky displays:
 
 <div style="margin: 1.5rem 0; border: 1px solid var(--shadow-claw-border-color, #2a402e); border-radius: 8px; overflow: hidden; background: #000;">
-  <iframe 
-    width="100%" 
-    height="420" 
-    src="https://www.youtube.com/embed/1aW5C7A9wSk" 
-    title="Block Garden Fireworks Demo" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  <iframe
+    width="100%"
+    height="420"
+    src="https://www.youtube.com/embed/1aW5C7A9wSk"
+    title="Block Garden Fireworks Demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen>
   </iframe>
 </div>
@@ -40,13 +40,13 @@ Experience the particle engine capabilities of Block Garden with the `Fireworks.
 Watch the real-time plant growth engine (`plantGrowth.mjs`) in action as agricultural plots mature across distinct growth stages:
 
 <div style="margin: 1.5rem 0; border: 1px solid var(--shadow-claw-border-color, #2a402e); border-radius: 8px; overflow: hidden; background: #000;">
-  <iframe 
-    width="100%" 
-    height="420" 
-    src="https://www.youtube.com/embed/eRDM5INHyKA" 
-    title="Block Garden Random Planting Demo" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  <iframe
+    width="100%"
+    height="420"
+    src="https://www.youtube.com/embed/eRDM5INHyKA"
+    title="Block Garden Random Planting Demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen>
   </iframe>
 </div>
@@ -63,13 +63,13 @@ Watch the real-time plant growth engine (`plantGrowth.mjs`) in action as agricul
 Ascend into the sky strata with zero-gravity flight (`K`) and construct high-altitude architecture floating above cloud layers:
 
 <div style="margin: 1.5rem 0; border: 1px solid var(--shadow-claw-border-color, #2a402e); border-radius: 8px; overflow: hidden; background: #000;">
-  <iframe 
-    width="100%" 
-    height="420" 
-    src="https://www.youtube.com/embed/OIdKx0u8REA" 
-    title="Block Garden Gateway To The Clouds Demo" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  <iframe
+    width="100%"
+    height="420"
+    src="https://www.youtube.com/embed/OIdKx0u8REA"
+    title="Block Garden Gateway To The Clouds Demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen>
   </iframe>
 </div>
