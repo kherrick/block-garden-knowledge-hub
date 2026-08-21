@@ -10,3 +10,7 @@ slug: "about"
 This is a content-only site powered by ShadowClaw.
 
 Replace this file with your own content and add more pages to `pages/main/`.
+
+---
+
+⬅️ [Previous Page](/main) | ➡️ [Next Page](/main/memory)

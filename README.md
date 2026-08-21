@@ -22,8 +22,8 @@ No ShadowClaw source lives in this repo — only your content and the workflow.
 2. In your new repo, go to **Settings → Pages → Source** and select
    **GitHub Actions**.
 3. Drop your markdown files into `pages/main/`.
-4. Optionally configure `pages/site-config.json` for site branding, sidebar navigation visibility, and page sort order.
-5. Optionally edit `pages/routes.json` to add pretty-path URLs.
+4. Optionally configure `pages/resources/site-config.json` for site branding, sidebar navigation visibility, and page sort order.
+5. Optionally edit `pages/resources/routes.json` to add pretty-path URLs.
 6. Push to `main` — the workflow builds and deploys automatically.
 
 ## Directory layout
@@ -34,8 +34,7 @@ pages/
     index.md          ← your home page
     ~/content/
       about.md        ← any other pages
-  site-config.json    ← declarative site metadata, branding & navigation config
-  routes.json         ← optional pretty-path configuration
+  resources/          ← root level files & resources (site-config.json, routes.json, 404.html, manifest.json, sitemap.xml / sitemap.txt, favicon.svg, assets/)
 .github/
   workflows/
     deploy-pages.yml  ← the build + deploy workflow (no changes needed)

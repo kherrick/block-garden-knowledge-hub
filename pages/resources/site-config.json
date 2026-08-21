@@ -1,18 +1,18 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "shadowClawVersion": "main",
+  "shadowClawVersion": "521b73044faafd8ba23c8754edafd520484fe187",
   "site": {
     "title": "ShadowClaw Template",
     "description": "Published with ShadowClaw"
   },
   "branding": {
     "titleText": "ShadowClaw Template",
-    "faviconPath": "favicon.svg",
-    "appleTouchIconPath": "favicon.svg",
-    "notFoundPath": "pages/404.html"
+    "faviconPath": "assets/icons/favicon.svg",
+    "appleTouchIconPath": "assets/icons/favicon.svg",
+    "notFoundPath": "404.html"
   },
-  "sitemapPath": "pages/sitemap.xml",
-  "assets": ["pages/assets"],
+  "sitemapPath": "sitemap.xml",
+  "assets": ["assets"],
   "sidebar": {
     "pagesHidden": false,
     "chatHidden": false,
@@ -21,6 +21,6 @@
     "defaultPage": "pages"
   },
   "pwa": {
-    "manifestPath": "pages/manifest.json"
+    "manifestPath": "manifest.json"
   }
 }
