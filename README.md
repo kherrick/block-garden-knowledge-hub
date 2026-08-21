@@ -1,5 +1,7 @@
 # ShadowClaw Template
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/xt-ml/shadow-claw-template)
+
 This is a starter template for publishing your own static site using
 [ShadowClaw](https://github.com/xt-ml/shadow-claw) as the build engine.
 
