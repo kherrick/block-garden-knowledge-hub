@@ -4,9 +4,9 @@
 #
 #   .github/workflows/deploy-pages.yml   ← this file
 #   pages/
-#     main/                              ← your markdown / HTML pages
+#     main/                              ← your markdown / HTML pages (optional)
 #     routes.json                        ← optional pretty-path config
-#     site-config.json                   ← optional declarative site configuration
+#   site-config.json                     ← optional declarative site configuration
 #
 # Required GitHub repo settings:
 #   Settings → Pages → Source: GitHub Actions
@@ -14,7 +14,7 @@
 # Version Pinning:
 #   You can pin ShadowClaw to a specific release tag (e.g. "v1.20.0"),
 #   commit SHA (e.g. "62253c53"), or branch ("main") via:
-#   1. `shadowClawVersion` in `pages/site-config.json`
+#   1. `shadowClawVersion` in `site-config.json`
 #   2. `.shadowclaw-version` file in repository root
 #   3. `SHADOWCLAW_REF` environment variable in this workflow
 #   4. `shadowclaw_ref` input when manually running via Actions UI (workflow_dispatch)
@@ -69,23 +69,11 @@ jobs:
             REF=$(node -e '
               try {
                 const fs = require("fs");
-                const paths = [
-                  "content/pages/resources/site-config.json",
-                  "content/pages/deps/site-config.json",
-                  "content/resources/site-config.json",
-                  "content/deps/site-config.json",
-                  "content/pages/site-config.json",
-                  "content/site-config.json",
-                ];
-                for (const p of paths) {
-                  if (fs.existsSync(p)) {
-                    const cfg = JSON.parse(fs.readFileSync(p, "utf8"));
-                    const v = cfg.shadowClawVersion || cfg.shadowClawRef || cfg.shadowclawVersion || cfg.shadowclawRef || "";
-                    if (v) {
-                      process.stdout.write(String(v).trim());
-                      break;
-                    }
-                  }
+                const configPath = "content/site-config.json";
+                if (fs.existsSync(configPath)) {
+                  const cfg = JSON.parse(fs.readFileSync(configPath, "utf8"));
+                  const v = cfg.shadowClawVersion || cfg.shadowClawRef || cfg.shadowclawVersion || cfg.shadowclawRef || "";
+                  process.stdout.write(String(v).trim());
                 }
               } catch (e) {
                 process.stdout.write("");
@@ -121,8 +109,10 @@ jobs:
       - name: Inject content into ShadowClaw build root
         run: |
           rm -rf shadow-claw/pages
-          cp -r content/pages shadow-claw/
+          if [ -d "content/pages" ]; then cp -r content/pages shadow-claw/; fi
+          if [ -f "content/site-config.json" ]; then cp content/site-config.json shadow-claw/; fi
           if [ -d "content/assets" ]; then cp -r content/assets shadow-claw/; fi
+          mkdir -p shadow-claw/pages
           if [ -f "content/404.html" ]; then cp content/404.html shadow-claw/pages/; fi
           if [ -f "content/manifest.json" ]; then cp content/manifest.json shadow-claw/pages/; fi
           if [ -f "content/sitemap.xml" ]; then cp content/sitemap.xml shadow-claw/pages/; fi

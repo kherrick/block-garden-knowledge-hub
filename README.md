@@ -23,20 +23,22 @@ No ShadowClaw source lives in this repo — only your content and the workflow.
 1. Click **Use this template** on GitHub (or fork/clone).
 2. In your new repo, go to **Settings → Pages → Source** and select
    **GitHub Actions**.
-3. Drop your markdown files into `pages/main/`.
-4. Optionally configure `pages/resources/site-config.json` for site branding, sidebar navigation visibility, and page sort order.
+3. Optionally drop your markdown files into `pages/main/`. A repository with
+   no `pages/` directory still builds with ShadowClaw's default Pages content.
+4. Optionally configure `site-config.json` (repo root) for site branding, sidebar navigation visibility, and page sort order.
 5. Optionally edit `pages/resources/routes.json` to add pretty-path URLs.
 6. Push to `main` — the workflow builds and deploys automatically.
 
 ## Directory layout
 
 ```txt
+site-config.json     ← declarative site branding, sidebar, and sorting config
 pages/
   main/
     index.md          ← your home page
     ~/content/
       about.md        ← any other pages
-  resources/          ← root level files & resources (site-config.json, routes.json, 404.html, manifest.json, sitemap.xml / sitemap.txt, favicon.svg, assets/)
+  resources/          ← root level files & resources (routes.json, 404.html, manifest.json, sitemap.xml / sitemap.txt, favicon.svg, assets/)
 .github/
   workflows/
     deploy-pages.yml  ← the build + deploy workflow (no changes needed)
