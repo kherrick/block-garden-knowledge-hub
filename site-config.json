@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "shadowClawVersion": "175963167102c7990334b14179a82f0f07722bb9",
+  "shadowClawVersion": "5d7fc4ee2bffe38568a20ed4995af20066ca4d38",
   "site": {
     "title": "Block Garden - Knowledge Hub",
     "description": "3D sandbox exploration, procedural world generation, farming, and interactive game engine documentation powered by ShadowClaw.",
