@@ -1,9 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "shadowClawVersion": "175963167102c7990334b14179a82f0f07722bb9",
+  "shadowClawVersion": "5d7fc4ee2bffe38568a20ed4995af20066ca4d38",
   "site": {
     "title": "ShadowClaw Template",
-    "description": "Published with ShadowClaw"
+    "description": "Published with ShadowClaw",
+    "siteUrl": "https://xt-ml.github.io/shadow-claw-template/",
+    "repoUrl": "https://github.com/xt-ml/shadow-claw-template",
+    "repoLabel": "ShadowClaw Template on GitHub"
   },
   "branding": {
     "titleText": "ShadowClaw Template",

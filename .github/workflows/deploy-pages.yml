@@ -110,6 +110,7 @@ jobs:
         run: |
           rm -rf shadow-claw/pages
           if [ -d "content/pages" ]; then cp -r content/pages shadow-claw/; fi
+          if [ -d "content/.agents" ]; then cp -r content/.agents shadow-claw/; fi
           if [ -f "content/site-config.json" ]; then cp content/site-config.json shadow-claw/; fi
           if [ -d "content/assets" ]; then cp -r content/assets shadow-claw/; fi
           mkdir -p shadow-claw/pages
