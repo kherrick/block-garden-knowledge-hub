@@ -1,0 +1,17 @@
+{
+  "name": "scan_for_nearby_ores",
+  "description": "Triggers Block Garden's actual in-game Ore Locator scanner on loaded voxel chunks around player coordinates and captures HUD toast results.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "radius": {
+        "type": "number",
+        "description": "Search radius in blocks (default: 16)."
+      }
+    }
+  },
+  "execution": {
+    "type": "javascript",
+    "code": "const requestId = Math.random().toString(36).slice(2); const commandChannel = new BroadcastChannel('block-garden-commands'); const resultsChannel = new BroadcastChannel('block-garden-results'); const result = await new Promise((resolve) => { const timer = setTimeout(() => { resultsChannel.close(); resolve('\\ud83e\\uddedOre scan timed out. The game may not be loaded yet.'); }, 10000); resultsChannel.onmessage = (evt) => { if (evt.data && evt.data.requestId === requestId) { clearTimeout(timer); resultsChannel.close(); resolve(evt.data.result); } }; commandChannel.postMessage({ type: 'blockgarden:scanores', requestId }); commandChannel.close(); }); return '\\n\\n### \\ud83e\\udded Block Garden Ore Locator\\n\\n' + result;"
+  }
+}

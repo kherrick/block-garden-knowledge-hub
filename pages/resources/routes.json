@@ -24,6 +24,9 @@
     "/pages/main/~/content/07-web-platform-and-performance.md": {
       "prettyPath": "/main/web-platform-and-performance"
     },
+    "/pages/main/~/content/08-agent-skills-and-tools.md": {
+      "prettyPath": "/main/agent-skills-and-tools"
+    },
     "/pages/main/MEMORY.md": {
       "prettyPath": "/main/memory"
     }

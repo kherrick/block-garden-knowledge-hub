@@ -22,7 +22,7 @@
   "sidebar": {
     "pagesHidden": false,
     "chatHidden": false,
-    "tasksHidden": true,
+    "tasksHidden": false,
     "filesHidden": false,
     "defaultPage": "pages"
   },
@@ -30,11 +30,16 @@
     "sortOrder": "asc",
     "defaultPinnedPage": "/pages/main/index.html"
   },
+  "enabledTools": ["scan_for_nearby_ores", "fireworks", "konami_code"],
   "theme": {
     "stylesheet": "pages/main/theme.css"
   },
   "customElements": {
-    "allowedElements": ["block-garden", "block-garden-select"],
+    "allowedElements": [
+      "block-garden",
+      "block-garden-option",
+      "block-garden-select"
+    ],
     "allowedDomains": ["kherrick.github.io"],
     "scripts": [
       "pages/main/block-garden-adapter.js",

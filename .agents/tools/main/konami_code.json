@@ -1,0 +1,17 @@
+{
+  "name": "konami_code",
+  "description": "Executes the secret Konami Code sequence in Block Garden to unlock dev mode, ore depth scanner, fast growth, and hidden options.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "autoExecute": {
+        "type": "boolean",
+        "description": "Whether to automatically trigger the key sequence in the active game viewport (default: true)."
+      }
+    }
+  },
+  "execution": {
+    "type": "javascript",
+    "code": "const requestId = Math.random().toString(36).slice(2); const cmd = new BroadcastChannel('block-garden-commands'); const res = new BroadcastChannel('block-garden-results'); const result = await new Promise((resolve) => { const t = setTimeout(() => { res.close(); resolve('Timed out \u2014 game may not be loaded yet.'); }, 15000); res.onmessage = (e) => { if (e.data && e.data.requestId === requestId) { clearTimeout(t); res.close(); resolve(e.data.result); } }; cmd.postMessage({ type: 'blockgarden:konamicode', requestId }); cmd.close(); }); return result;"
+  }
+}

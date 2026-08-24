@@ -1,0 +1,21 @@
+{
+  "name": "fireworks",
+  "description": "Launches a 3D voxel fireworks particle display inside the live Block Garden world.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "count": {
+        "type": "number",
+        "description": "Number of fireworks bursts to ignite (default: 5)."
+      },
+      "colorPalette": {
+        "type": "string",
+        "description": "Color theme for particle explosions: rainbow, gold, neon, emerald."
+      }
+    }
+  },
+  "execution": {
+    "type": "javascript",
+    "code": "const requestId = Math.random().toString(36).slice(2); const cmd = new BroadcastChannel('block-garden-commands'); const res = new BroadcastChannel('block-garden-results'); const result = await new Promise((resolve) => { const t = setTimeout(() => { res.close(); resolve('Timed out \u2014 game may not be loaded yet.'); }, 12000); res.onmessage = (e) => { if (e.data && e.data.requestId === requestId) { clearTimeout(t); res.close(); resolve(e.data.result); } }; cmd.postMessage({ type: 'blockgarden:fireworks', requestId }); cmd.close(); }); return result;"
+  }
+}

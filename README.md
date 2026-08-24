@@ -15,6 +15,7 @@ Welcome to the official **Block Garden Knowledge Hub**! This project is an exhau
 > - 🎥 **[Chapter 5: Video Demos & Media Showcase](https://kherrick.github.io/block-garden-knowledge-hub/main/demos-and-media)** (`/main/demos-and-media`)
 > - 📄 **[Chapter 6: PDF World Saves & Postcard Gallery](https://kherrick.github.io/block-garden-knowledge-hub/main/world-saves-and-pdfs)** (`/main/world-saves-and-pdfs`)
 > - ⚡ **[Chapter 7: Web Platform Breakdown & Performance Engineering](https://kherrick.github.io/block-garden-knowledge-hub/main/web-platform-and-performance)** (`/main/web-platform-and-performance`)
+> - 🤖 **[Chapter 8: Agent Skills, Declarative Tools & Slash Commands](https://kherrick.github.io/block-garden-knowledge-hub/main/agent-skills-and-tools)** (`/main/agent-skills-and-tools`)
 > - 🧠 **[Master Technical Memory & Architecture Reference](https://kherrick.github.io/block-garden-knowledge-hub/main/memory)** (`/main/memory`)
 
 ---
@@ -84,6 +85,19 @@ Block Garden stands out as a pioneering **Web-Platform-as-OS** reference impleme
 | **Hotbar Toggle**   | `M`                           | UI Button           | Show / hide hotbar UI          |
 | **World Gen Menu**  | `Ctrl` + `S`                  | Menu                | Configure seed & generator     |
 | **Konami Code**     | `↑↑↓↓←→←→BA`                  | —                   | Unlock Dev Mode & Ore Locator  |
+
+---
+
+## 🤖 Agent Skills & Declarative Tools
+
+The Block Garden Knowledge Hub provides bundled **Agent Skills** and **Declarative Tools** under `.agents/` for the integrated ShadowClaw AI assistant (`BlockGardener`):
+
+- 🧭 **`.agents/skills/main/scan-for-nearby-ores/SKILL.md`**: Scans loaded voxel chunks for nearby ore deposits around player coordinates (`/scan-for-nearby-ores`).
+- 🎆 **`.agents/skills/main/fireworks/SKILL.md`**: Real-time 3D voxel fireworks particle physics display (`/fireworks`).
+- 🎮 **`.agents/skills/main/konami-code/SKILL.md`**: Secret Konami Code sequence unlocker for dev mode & ore locator (`/konami-code`).
+- 🧭 **`.agents/tools/main/scan_for_nearby_ores.json`**: Declarative tool scanning loaded voxel chunks for nearby ore deposits.
+- 🎆 **`.agents/tools/main/fireworks.json`**: Declarative tool triggering 3D voxel fireworks particle bursts.
+- 🎮 **`.agents/tools/main/konami_code.json`**: Declarative tool triggering Konami Code sequence and dev mode unlock.
 
 ---
 

@@ -78,4 +78,4 @@ Entering the Konami code sequence (`Up Up Down Down Left Right Left Right B A`) 
 
 ---
 
-⬅️ [Previous Page](/main/web-platform-and-performance)
+⬅️ [Previous Page](/main/agent-skills-and-tools)

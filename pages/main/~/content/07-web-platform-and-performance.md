@@ -89,4 +89,4 @@ $$\text{Up } \rightarrow \text{Up } \rightarrow \text{Down } \rightarrow \text{D
 
 ---
 
-⬅️ [Previous Page](/main/world-saves-and-pdfs) | ➡️ [Next Page](/main/memory)
+⬅️ [Previous Page](/main/world-saves-and-pdfs) | ➡️ [Next Page](/main/agent-skills-and-tools)
