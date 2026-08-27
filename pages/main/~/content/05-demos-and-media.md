@@ -11,7 +11,7 @@ Welcome to **Chapter 5**! This showcase highlights the official video demonstrat
 
 ---
 
-## 🎆 1. Fireworks Video Demo
+### 🎆 1. Fireworks Video Demo
 
 Experience the particle engine capabilities of Block Garden with the `Fireworks.mjs` API module launching explosive night sky displays:
 
@@ -35,7 +35,7 @@ Experience the particle engine capabilities of Block Garden with the `Fireworks.
 
 ---
 
-## 🌱 2. Random Plant Growth Video Demo
+### 🌱 2. Random Plant Growth Video Demo
 
 Watch the real-time plant growth engine (`plantGrowth.mjs`) in action as agricultural plots mature across distinct growth stages:
 
@@ -58,7 +58,7 @@ Watch the real-time plant growth engine (`plantGrowth.mjs`) in action as agricul
 
 ---
 
-## ☁️ 3. Gateway To The Clouds Video Demo
+### ☁️ 3. Gateway To The Clouds Video Demo
 
 Ascend into the sky strata with zero-gravity flight (`K`) and construct high-altitude architecture floating above cloud layers:
 

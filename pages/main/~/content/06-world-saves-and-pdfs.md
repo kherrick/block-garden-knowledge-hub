@@ -11,7 +11,7 @@ Welcome to **Chapter 6**! Block Garden features a revolutionary **PDF Save Game 
 
 ---
 
-## 💾 1. Technical PDF Architecture
+### 💾 1. Technical PDF Architecture
 
 When you export a save game to PDF in Block Garden (`src/ui/dialog/storage.mjs`):
 
@@ -38,13 +38,13 @@ When you export a save game to PDF in Block Garden (`src/ui/dialog/storage.mjs`)
 
 ---
 
-## 🖼️ 2. Official PDF Game Save Gallery
+### 🖼️ 2. Official PDF Game Save Gallery
 
 Click any world card below to launch Block Garden with the PDF save pre-loaded:
 
 ---
 
-### 1. 🌿 [The Garden PDF Save](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/The-Garden.pdf)
+#### 1. 🌿 [The Garden PDF Save](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/The-Garden.pdf)
 
 A sprawling botanical sanctuary showcasing lush crop fields, structured water channels, and flower gardens.
 
@@ -55,7 +55,7 @@ A sprawling botanical sanctuary showcasing lush crop fields, structured water ch
 
 ---
 
-### 2. 🕳️ [Caves PDF Save](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Caves.pdf)
+#### 2. 🕳️ [Caves PDF Save](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Caves.pdf)
 
 Deep subterranean cavern structures featuring illuminated mining shafts, lava protection zone barriers, and mineral deposits.
 
@@ -66,7 +66,7 @@ Deep subterranean cavern structures featuring illuminated mining shafts, lava pr
 
 ---
 
-### 3. 🌸 [Flowers PDF Save](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Flowers.pdf)
+#### 3. 🌸 [Flowers PDF Save](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Flowers.pdf)
 
 A high-density floral biome showcase packed with vibrant rose beds, sunflowers, and decorative plant growth.
 
@@ -77,7 +77,7 @@ A high-density floral biome showcase packed with vibrant rose beds, sunflowers, 
 
 ---
 
-### 4. ☁️ [Gateway To The Clouds PDF Save](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Gateway-To-The-Clouds.pdf)
+#### 4. ☁️ [Gateway To The Clouds PDF Save](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Gateway-To-The-Clouds.pdf)
 
 An architectural sky tower rising from sea level through the cloud layer into aerial garden platforms.
 

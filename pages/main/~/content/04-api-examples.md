@@ -11,7 +11,7 @@ Welcome to **Chapter 4**! Block Garden is designed from the ground up as an **op
 
 ---
 
-## 🛠️ 1. The Block Garden Public API Surface
+### 🛠️ 1. The Block Garden Public API Surface
 
 The public API (`src/api/BlockGarden.mjs`, ~764 lines) exposes clean JavaScript hooks into the world state, player controller, and rendering pipeline:
 
@@ -41,7 +41,7 @@ api.showToast("Custom Mod Loaded!");
 await api.drawQRCode("https://kherrick.github.io/block-garden/", 0, 70, 0);
 ```
 
-### Key API Capabilities:
+#### Key API Capabilities:
 
 - **World & Block Manipulation**: `getWorld()`, `setWorld()`, `getBlock()`, `setBlock()`, `getBlockIdByName()`.
 - **Event Listeners**: `onBlockBreak()`, player collision hooks, block place listeners.
@@ -51,7 +51,7 @@ await api.drawQRCode("https://kherrick.github.io/block-garden/", 0, 70, 0);
 
 ---
 
-## 🎨 2. Shipped Mod Examples Gallery
+### 🎨 2. Shipped Mod Examples Gallery
 
 Block Garden ships with a gallery of built-in ES module script examples under `src/api/examples/`. Each example can be run via live console injection or one-click bookmarklets:
 
@@ -68,11 +68,11 @@ Block Garden ships with a gallery of built-in ES module script examples under `s
 
 ---
 
-## ⚡ 3. Live Console & Bookmarklet Execution
+### ⚡ 3. Live Console & Bookmarklet Execution
 
 You can run any mod script directly inside a live Block Garden session!
 
-### Dynamic Console Injection
+#### Dynamic Console Injection
 
 Open your browser developer console (`F12`) while playing Block Garden and paste:
 
@@ -89,7 +89,7 @@ import("https://kherrick.github.io/block-garden/src/api/examples/Messaging.mjs")
 );
 ```
 
-### One-Click Bookmarklet Pattern
+#### One-Click Bookmarklet Pattern
 
 Bookmarklets scrape the `<block-garden>` Shadow DOM root, close open modal dialogs, and inject the script module into the host page automatically:
 

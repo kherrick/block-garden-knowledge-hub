@@ -11,9 +11,9 @@ Welcome to **Chapter 2**! Here you will find the complete reference for playing 
 
 ---
 
-## 🕹️ 1. Input Controls Reference
+### 🕹️ 1. Input Controls Reference
 
-### Desktop Keyboard & Mouse
+#### Desktop Keyboard & Mouse
 
 | Action              | Primary Key       | Alternate Key | Description                                                 |
 | :------------------ | :---------------- | :------------ | :---------------------------------------------------------- |
@@ -33,7 +33,7 @@ Welcome to **Chapter 2**! Here you will find the complete reference for playing 
 | **World Gen Menu**  | `Ctrl` + `S`      | —             | Open world generator configuration                          |
 | **Pointer Lock**    | `Click 3D Canvas` | —             | Lock mouse cursor for 3D FPS camera (Press `Esc` to unlock) |
 
-### Mobile Touch Controls (Powered by Hammer.js)
+#### Mobile Touch Controls (Powered by Hammer.js)
 
 | Action            | Gesture              | Description                                     |
 | :---------------- | :------------------- | :---------------------------------------------- |
@@ -44,7 +44,7 @@ Welcome to **Chapter 2**! Here you will find the complete reference for playing 
 
 ---
 
-## 🎮 2. Game Modes
+### 🎮 2. Game Modes
 
 Block Garden features two primary modes selectable in the Settings menu:
 
@@ -53,7 +53,7 @@ Block Garden features two primary modes selectable in the Settings menu:
 
 ---
 
-## 💾 3. Offline-First Storage & PDF Postcard Protocol
+### 💾 3. Offline-First Storage & PDF Postcard Protocol
 
 Block Garden is completely **cloud-free and privacy-first**. Your progress remains entirely on your device or in self-describing save files.
 
@@ -69,7 +69,7 @@ Block Garden is completely **cloud-free and privacy-first**. Your progress remai
                                                     [Web Share Target API]
 ```
 
-### Save File Formats
+#### Save File Formats
 
 - **IndexedDB**: Saves automatically persist in local storage via `localforage`, compressed with native `CompressionStream("gzip")`.
 - **`.bgs` Binaries**: Lightweight gzip-compressed binary world files.
@@ -78,7 +78,7 @@ Block Garden is completely **cloud-free and privacy-first**. Your progress remai
 
 ---
 
-## 🗺️ 4. Included Pre-Packaged Worlds & YouTube Demos
+### 🗺️ 4. Included Pre-Packaged Worlds & YouTube Demos
 
 Jump straight into pre-built worlds using seed links or downloadable PDF game saves:
 
@@ -87,7 +87,7 @@ Jump straight into pre-built worlds using seed links or downloadable PDF game sa
 - 🌸 **[Flowers](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Flowers.pdf)**: High-density floral biomes.
 - ☁️ **[Gateway To The Clouds](https://kherrick.github.io/block-garden/?gettingStarted=false&gameSave=https://kherrick.github.io/block-garden/assets/game-saves/Gateway-To-The-Clouds.pdf)**: Skyward tower reaching cloud level.
 
-### Video Demonstrations
+#### Video Demonstrations
 
 - 🎆 [Fireworks Mod Video Demo](https://www.youtube.com/watch?v=1aW5C7A9wSk)
 - 🌱 [Random Plant Growth Video Demo](https://www.youtube.com/watch?v=eRDM5INHyKA)

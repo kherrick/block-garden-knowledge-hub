@@ -11,7 +11,7 @@ Welcome to **Chapter 3**! Unlike standard sandbox engines focused solely on bloc
 
 ---
 
-## 🌾 1. Soil Hydration & Growth Requirements
+### 🌾 1. Soil Hydration & Growth Requirements
 
 Every plant species in Block Garden defines specific growth requirements for soil composition, moisture level, and light exposure.
 
@@ -34,7 +34,7 @@ Every plant species in Block Garden defines specific growth requirements for soi
     └── Dry Soil   ──► [Standard Growth]      ──┴──► [Stage Advancement & Bloom]
 ```
 
-### Cultivation Factors:
+#### Cultivation Factors:
 
 1. **Soil Types**: Plants require designated base blocks, such as Dirt, Tilled Farmland, Sand, Clay, or Water.
 2. **Soil Hydration**: Farmland tilled near water channels becomes hydrated soil, accelerating growth ticks.
@@ -43,7 +43,7 @@ Every plant species in Block Garden defines specific growth requirements for soi
 
 ---
 
-## 🌿 2. Botanical Species Catalog (20+ Varieties)
+### 🌿 2. Botanical Species Catalog (20+ Varieties)
 
 Block Garden includes 20+ distinct botanical species across several plant categories:
 
@@ -67,7 +67,7 @@ Block Garden includes 20+ distinct botanical species across several plant catego
 
 ---
 
-## 🧪 3. Growth Cycles & Seed Propagation
+### 🧪 3. Growth Cycles & Seed Propagation
 
 - **Age Progression**: `plantGrowth.mjs` runs age progression checks during game ticks, advancing plants through visual growth stages.
 - **Harvesting Mechanics**: Mining a fully mature plant drops mature crops plus bonus seed drops to sustain expanding agricultural plots.

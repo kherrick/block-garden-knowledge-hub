@@ -11,7 +11,7 @@ Welcome to **Chapter 8**! The Block Garden Knowledge Hub integrates seamlessly w
 
 ---
 
-## 🏗️ 1. Architecture: Cross-Frame Communication Bridge
+### 🏗️ 1. Architecture: Cross-Frame Communication Bridge
 
 Because ShadowClaw executes agent tool logic within an isolated Web Worker context without direct DOM access, communication between the AI assistant (`BlockGardener`) and the active 3D `<block-garden>` WebGL viewport uses a bi-directional **`BroadcastChannel` Bridge** inside `block-garden-adapter.js`:
 
@@ -31,7 +31,7 @@ Because ShadowClaw executes agent tool logic within an isolated Web Worker conte
               │   BroadcastChannel("block-garden-results") │
 ```
 
-### Bridge Design Highlights:
+#### Bridge Design Highlights:
 
 - **Asynchronous Command Execution**: Tools post JSON payload requests containing unique `requestId` tokens to the `"block-garden-commands"` channel.
 - **Engine API Delegation**: `block-garden-adapter.js` intercepts messages on the main thread, dynamically imports Block Garden modules (e.g. `oreLocator.mjs`, `Fireworks.mjs`, `KonamiCode.mjs`), and executes native game logic against `window.blockGarden`.
@@ -39,23 +39,23 @@ Because ShadowClaw executes agent tool logic within an isolated Web Worker conte
 
 ---
 
-## 🧭 2. Bundled Agent Skills & Slash Commands
+### 🧭 2. Bundled Agent Skills & Slash Commands
 
 Agent Skills under `.agents/skills/main/` provide deterministic execution pipelines and guidance for the AI assistant. Each skill is marked `user-invocable: true` and can be triggered directly in chat using slash commands:
 
-### 1. 🧭 Scan for Nearby Ores (`/scan-for-nearby-ores`)
+#### 1. 🧭 Scan for Nearby Ores (`/scan-for-nearby-ores`)
 
 - **Skill File**: `.agents/skills/main/scan-for-nearby-ores/SKILL.md`
 - **Slash Command**: `/scan-for-nearby-ores`
 - **Capabilities**: Scans loaded 3D voxel chunks within a configured radius (default: 16 blocks) around player coordinates. Returns detailed breakdowns of nearby Coal, Iron, Gold, Copper, Silver, Diamond, and Emerald deposits.
 
-### 2. 🎆 Voxel Fireworks Display (`/fireworks`)
+#### 2. 🎆 Voxel Fireworks Display (`/fireworks`)
 
 - **Skill File**: `.agents/skills/main/fireworks/SKILL.md`
 - **Slash Command**: `/fireworks`
 - **Capabilities**: Dynamically imports `Fireworks.mjs` and ignites real-time 3D voxel fireworks particle physics bursts into the sky above the player.
 
-### 3. 🎮 Secret Konami Code Unlocker (`/konami-code`)
+#### 3. 🎮 Secret Konami Code Unlocker (`/konami-code`)
 
 - **Skill File**: `.agents/skills/main/konami-code/SKILL.md`
 - **Slash Command**: `/konami-code`
@@ -63,7 +63,7 @@ Agent Skills under `.agents/skills/main/` provide deterministic execution pipeli
 
 ---
 
-## 🛠️ 3. Declarative Tools Inventory
+### 🛠️ 3. Declarative Tools Inventory
 
 Declarative tools under `.agents/tools/main/` define executable JSON tool definitions that map directly to the engine bridge:
 
@@ -75,7 +75,7 @@ Declarative tools under `.agents/tools/main/` define executable JSON tool defini
 
 ---
 
-## ⚙️ 4. Initial Tool Enablement & Skill Purge Markers
+### ⚙️ 4. Initial Tool Enablement & Skill Purge Markers
 
 Site configuration (`site-config.json`) automatically enables these tools on initial site boot:
 

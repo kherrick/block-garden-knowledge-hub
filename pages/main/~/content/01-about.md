@@ -11,7 +11,7 @@ Welcome to **Chapter 1** of the Block Garden Knowledge Hub! This chapter provide
 
 ---
 
-## 🌐 Project Links & Resources
+### 🌐 Project Links & Resources
 
 - 🎮 **Live Web Game**: [block-garden](https://kherrick.github.io/block-garden/)
 - ⚡ **Unbundled Live Runtime**: [block-garden/index_unbundled.html](https://kherrick.github.io/block-garden/index_unbundled.html)
@@ -26,7 +26,7 @@ Welcome to **Chapter 1** of the Block Garden Knowledge Hub! This chapter provide
 
 ---
 
-## 🏗️ 1. Procedural Noise & Multi-Threaded Chunk Generation
+### 🏗️ 1. Procedural Noise & Multi-Threaded Chunk Generation
 
 Block Garden generates infinite, deterministic 3D voxel landscapes from a single seed value using multi-layered noise functions in `src/core/world/generation/chunk.mjs`.
 
@@ -63,7 +63,7 @@ Block Garden generates infinite, deterministic 3D voxel landscapes from a single
   └──────────────────────────────┘
 ```
 
-### Key Generation Mechanics:
+#### Key Generation Mechanics:
 
 1. **Seeded Noise Pipeline**: Seeded 3D Simplex noise (`src/utils/noise.mjs` using `alea` PRNG) ensures world seeds are 100% reproducible and shareable across devices.
 2. **Layered Terrain Topography**: Blends base terrain noise, 3D mountain shaping, hilliness octaves, and lake depressions to create organic cliffs, valleys, and deep lakes.
@@ -77,7 +77,7 @@ Block Garden generates infinite, deterministic 3D voxel landscapes from a single
 
 ---
 
-## 💡 2. Volumetric BFS Flood-Fill Lighting System
+### 💡 2. Volumetric BFS Flood-Fill Lighting System
 
 Lighting in Block Garden (`src/core/world/lighting/lightSystem.mjs`) is calculated dynamically using a voxel-based Breadth-First Search (BFS) engine backed by a flat `Uint8Array` (`LightMap`).
 
@@ -87,7 +87,7 @@ Lighting in Block Garden (`src/core/world/lighting/lightSystem.mjs`) is calculat
 
 ---
 
-## 🎨 3. Greedy Meshing, Ambient Occlusion & Shader Pipelines
+### 🎨 3. Greedy Meshing, Ambient Occlusion & Shader Pipelines
 
 To achieve high rendering performance, the chunk mesher (`src/core/world/meshing/chunkMesher.mjs`) transforms raw block arrays into optimized GPU geometry:
 
@@ -100,7 +100,7 @@ To achieve high rendering performance, the chunk mesher (`src/core/world/meshing
 
 ---
 
-## ⚡ 4. Fine-Grained Signal Reactivity (No Framework Overhead)
+### ⚡ 4. Fine-Grained Signal Reactivity (No Framework Overhead)
 
 Rather than relying on heavy VDOM diffing frameworks (React, Vue), Block Garden uses standard Web Standards paired with TC39 `signal-polyfill` (`Signal.State` and `Signal.Computed`).
 

@@ -16,6 +16,7 @@
   --shadow-claw-border-color: #cde4c9;
 
   --shadow-claw-accent-primary: #15803d;
+  --shadow-claw-accent-secondary: var(--shadow-claw-accent-primary);
   --shadow-claw-accent-hover: #166534;
   --shadow-claw-surface-tint: #15803d;
   --shadow-claw-on-primary: #ffffff;

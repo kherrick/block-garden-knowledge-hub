@@ -11,7 +11,7 @@ Welcome to **Chapter 7**! Block Garden is designed as a primary reference implem
 
 ---
 
-## 🌐 1. The Browser-as-an-OS Paradigm
+### 🌐 1. The Browser-as-an-OS Paradigm
 
 Unlike conventional web games that rely on heavy WASM runtimes or monolithic framework bundles, Block Garden maps native browser infrastructure directly to core game engine subsystems:
 
@@ -39,7 +39,7 @@ Unlike conventional web games that rely on heavy WASM runtimes or monolithic fra
 
 ---
 
-## 🛠️ 2. Comprehensive Web API Inventory
+### 🛠️ 2. Comprehensive Web API Inventory
 
 Block Garden intentionally exercises a vast array of standard Web Platform APIs without external framework shims:
 
@@ -62,7 +62,7 @@ Block Garden intentionally exercises a vast array of standard Web Platform APIs 
 
 ---
 
-## ⚡ 3. Performance Engineering & Hot-Path Optimizations
+### ⚡ 3. Performance Engineering & Hot-Path Optimizations
 
 To maintain a consistent **60 FPS (~16.6ms frame budget)** on both mobile devices and high-refresh desktop monitors, Block Garden employs strict performance patterns in `src/core/systems/game/loop.mjs`:
 
@@ -73,7 +73,7 @@ To maintain a consistent **60 FPS (~16.6ms frame budget)** on both mobile device
 
 ---
 
-## 🔑 4. Secret Dev Mode (Konami Code)
+### 🔑 4. Secret Dev Mode (Konami Code)
 
 Block Garden includes a hidden developer control panel unlocked by entering the classic **Konami Code** sequence on keyboard:
 

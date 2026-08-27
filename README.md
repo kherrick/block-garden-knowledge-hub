@@ -16,7 +16,7 @@ Welcome to the official **Block Garden Knowledge Hub**! This project is an exhau
 > - 📄 **[Chapter 6: PDF World Saves & Postcard Gallery](https://kherrick.github.io/block-garden-knowledge-hub/main/world-saves-and-pdfs)** (`/main/world-saves-and-pdfs`)
 > - ⚡ **[Chapter 7: Web Platform Breakdown & Performance Engineering](https://kherrick.github.io/block-garden-knowledge-hub/main/web-platform-and-performance)** (`/main/web-platform-and-performance`)
 > - 🤖 **[Chapter 8: Agent Skills, Declarative Tools & Slash Commands](https://kherrick.github.io/block-garden-knowledge-hub/main/agent-skills-and-tools)** (`/main/agent-skills-and-tools`)
-> - 🧠 **[Master Technical Memory & Architecture Reference](https://kherrick.github.io/block-garden-knowledge-hub/main/memory)** (`/main/memory`)
+> - 🧠 **[Technical Memory & Architecture Reference](https://kherrick.github.io/block-garden-knowledge-hub/main/memory)** (`/main/memory`)
 
 ---
 

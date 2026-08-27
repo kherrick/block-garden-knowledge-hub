@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "shadowClawVersion": "950f532a2be61821b596802ad828798ffdbc9940",
+  "shadowClawVersion": "287742ee15369fecf6220af2d003e068f94b9471",
   "site": {
     "title": "Block Garden - Knowledge Hub",
     "description": "3D sandbox exploration, procedural world generation, farming, and interactive game engine documentation powered by ShadowClaw.",
@@ -33,7 +33,6 @@
     "sortOrder": "asc",
     "defaultPinnedPage": "/pages/main/index.html"
   },
-  "enabledTools": ["scan_for_nearby_ores", "fireworks", "konami_code"],
   "theme": {
     "stylesheet": "pages/main/theme.css"
   },
@@ -64,5 +63,5 @@
     "assistantName": "BlockGardener",
     "defaultToolsProfile": "none"
   },
-  "enabledTools": ["javascript", "read_file"]
+  "enabledTools": ["scan_for_nearby_ores", "fireworks", "konami_code"]
 }
