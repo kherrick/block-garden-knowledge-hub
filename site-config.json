@@ -17,6 +17,9 @@
     "notFoundPath": "404.html",
     "logoSlotHtml": "<svg class=\"header-title-logo\" viewBox=\"0 0 32 32\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16 2 L30 10 L16 18 L2 10 Z\" fill=\"#22c55e\"/><path d=\"M16 2 L30 10 L16 18 L2 10 Z\" fill=\"url(#grass-top)\"/><path d=\"M2 10 L16 18 L16 30 L2 22 Z\" fill=\"#854d0e\"/><path d=\"M16 18 L30 10 L30 22 L16 30 Z\" fill=\"#713f12\"/><path d=\"M2 10 L16 18 L16 21 L2 13 Z\" fill=\"#15803d\"/><path d=\"M16 18 L30 10 L30 13 L16 21 Z\" fill=\"#166534\"/><defs><linearGradient id=\"grass-top\" x1=\"2\" y1=\"2\" x2=\"30\" y2=\"18\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0%\" stop-color=\"#4ade80\"/><stop offset=\"100%\" stop-color=\"#16a34a\"/></linearGradient></defs></svg>"
   },
+  "pwa": {
+    "manifestPath": "manifest.json"
+  },
   "sitemapPath": "sitemap.xml",
   "assets": ["assets"],
   "sidebar": {
@@ -58,13 +61,8 @@
     "connectSrc": ["'self'", "blob:", "data:", "https://kherrick.github.io"]
   },
   "settings": {
-    "assistantName": "BlockGardener"
-  },
-  "pwa": {
-    "manifestPath": "manifest.json"
-  },
-  "settings": {
-    "defaultToolsProfile": "none",
+    "assistantName": "BlockGardener",
+    "defaultToolsProfile": "none"
   },
   "enabledTools": ["javascript", "read_file"]
 }
