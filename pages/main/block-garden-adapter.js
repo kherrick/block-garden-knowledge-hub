@@ -432,6 +432,67 @@
         }
       }
 
+      // -----------------------------------------------------------------------
+      // Srcdoc Link-Block "Travel to World?" Navigation Bridge
+      // -----------------------------------------------------------------------
+      // Block Garden's link-block activation dialog (#confirmTravel) calls
+      // `window.location.href = url` on confirmation, which silently fails
+      // in sandboxed srcdoc iframes (no allow-same-origin). We intercept the
+      // confirm button click in capture phase, extract the world name from
+      // the dialog's <strong> tag, reconstruct the game-save URL using the
+      // same formatName logic as block-garden, and open it in a new tab via
+      // win.open() so it gets a full browser context.
+      // -----------------------------------------------------------------------
+      if (win.location?.href === "about:srcdoc") {
+        const confirmBtn = dialog.querySelector("#confirmTravel");
+        if (confirmBtn && !confirmBtn._bgAdapterNavPatched) {
+          confirmBtn._bgAdapterNavPatched = true;
+
+          confirmBtn.addEventListener(
+            "click",
+            (ev) => {
+              ev.preventDefault();
+              ev.stopImmediatePropagation();
+
+              // Extract the world name from the dialog's <strong> tag
+              // (e.g. "Would you like to travel to <strong>Gateway To The Clouds</strong>?")
+              const strong = dialog.querySelector("strong");
+              const worldName = strong?.textContent?.trim();
+
+              if (worldName) {
+                // Reconstruct the URL using the same formatName logic as
+                // block-garden's interaction.mjs → formatWorldName.mjs:
+                // capitalize each word, replace spaces with dashes, strip
+                // non-alphanumeric characters
+                const filename =
+                  worldName
+                    .trim()
+                    .replace(/[^a-zA-Z0-9\s-]/g, "")
+                    .split(/\s+/)
+                    .map(
+                      (w) =>
+                        w.charAt(0).toUpperCase() + w.slice(1).toLowerCase(),
+                    )
+                    .join("-") + ".pdf";
+                const gameSaveUrl = `https://kherrick.github.io/block-garden/assets/game-saves/${filename}`;
+                const targetUrl = new URL(
+                  "https://kherrick.github.io/block-garden/",
+                );
+                targetUrl.searchParams.set("gameSave", gameSaveUrl);
+                targetUrl.searchParams.set("gettingStarted", "false");
+                win.open(targetUrl.toString(), "_blank");
+              }
+
+              // Close the dialog
+              if (dialog.open) {
+                dialog.close();
+              }
+            },
+            true, // capture phase — fires BEFORE block-garden's handler
+          );
+        }
+      }
+
       requestAnimationFrame(() => {
         if (dialog.open) {
           dialog.focus();
