@@ -42,7 +42,7 @@
       "block-garden-option",
       "block-garden-select"
     ],
-    "allowedDomains": ["kherrick.github.io"],
+    "allowedDomains": ["kherrick.github.io", "cdn.jsdelivr.net"],
     "scripts": [
       "pages/main/block-garden-adapter.js",
       "https://kherrick.github.io/block-garden/block-garden-bundle-min.mjs"
@@ -53,11 +53,16 @@
       "allow-modals",
       "allow-scripts",
       "allow-popups",
-      "allow-popups-to-escape-sandbox",
-      "allow-same-origin"
+      "allow-popups-to-escape-sandbox"
     ],
     "workerSrc": ["'self'", "blob:", "data:"],
-    "connectSrc": ["'self'", "blob:", "data:", "https://kherrick.github.io"]
+    "connectSrc": [
+      "'self'",
+      "blob:",
+      "data:",
+      "https://kherrick.github.io",
+      "https://cdn.jsdelivr.net"
+    ]
   },
   "settings": {
     "assistantName": "BlockGardener",

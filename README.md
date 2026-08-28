@@ -65,6 +65,7 @@ Block Garden stands out as a pioneering **Web-Platform-as-OS** reference impleme
 - 🌾 **Farming Engine & 20+ Botanical Species**: Evaluates soil types (dirt, farmland, sand, clay, water), soil hydration, BFS light levels, and growth ticks for wheat, corn, carrots, pumpkins, roses, sunflowers, bamboo, cacti, trees, mushrooms, and aquatic plants.
 - 💾 **Privacy-First PDF Postcards**: World saves encoded to gzip JSON, embedded into custom PNG `tEXt` chunks (`gamestate`) with CRC32 checksums, and rendered onto printable PDF postcards with `pdf-lib`.
 - 🔌 **Public Modding API**: Extensible runtime scripting API (`src/api/BlockGarden.mjs`) supporting one-click bookmarklets and live browser console script execution.
+- 🛡️ **Hardened Sandboxed Iframe Support**: Operates within strict opaque-origin (`null`) iframe sandboxes without `allow-same-origin`, using parent `postMessage` storage proxying for IndexedDB game saves, `cdn.jsdelivr.net` CSP origin rules, and capture-phase click interception in `block-garden-adapter.js` to launch game-save URLs in new tabs (`win.open(..., '_blank')`) via `allow-popups-to-escape-sandbox`.
 
 ---
 

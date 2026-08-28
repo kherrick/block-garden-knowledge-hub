@@ -340,6 +340,98 @@
         closeBtn.removeAttribute("autofocus");
       }
 
+      // -----------------------------------------------------------------------
+      // Srcdoc Game-Save Navigation Bridge
+      // -----------------------------------------------------------------------
+      // In sandboxed srcdoc iframes, block-garden's Getting Started dialog
+      // attaches click handlers that call `globalThis.location.href = url`
+      // after a confirm(). This silently fails because the sandbox blocks
+      // cross-origin navigation. We intercept these clicks via capture-phase
+      // listeners (which fire BEFORE block-garden's bubbling handlers), show
+      // our own confirm dialog, and relay the URL to the parent via
+      // postMessage so it can rebuild the srcdoc with the correct params.
+      // -----------------------------------------------------------------------
+      if (win.location?.href === "about:srcdoc") {
+        const isSrcdocNav = true;
+        const content = dialog.querySelector(".getting-started-content");
+        if (content && isSrcdocNav) {
+          const headers = Array.from(content.querySelectorAll("h4"));
+          headers.forEach((h4) => {
+            const title = (h4.textContent || "").trim();
+
+            const interceptNav = (anchorEl) => {
+              if (!anchorEl || anchorEl._bgAdapterNavPatched) return;
+              anchorEl._bgAdapterNavPatched = true;
+
+              anchorEl.addEventListener(
+                "click",
+                (ev) => {
+                  ev.preventDefault();
+                  ev.stopImmediatePropagation();
+
+                  const targetUrl =
+                    anchorEl.href || anchorEl.getAttribute("href");
+                  if (!targetUrl) return;
+
+                  const confirmed = globalThis.confirm(
+                    `Leave your current game and load "${title}"?`,
+                  );
+
+                  if (confirmed) {
+                    win.open(targetUrl, "_blank");
+                  }
+                },
+                true, // capture phase — fires BEFORE block-garden's handler
+              );
+            };
+
+            // Patch anchors/images under each h4 game-save section
+            Array.from(h4.querySelectorAll("a")).forEach(interceptNav);
+            let sib = h4.nextElementSibling;
+            while (sib && sib.tagName !== "H3" && sib.tagName !== "H4") {
+              Array.from(sib.querySelectorAll("a")).forEach(interceptNav);
+              // Also intercept clicks on images that are inside anchors
+              Array.from(sib.querySelectorAll("img")).forEach((img) => {
+                const parentA = img.closest("a");
+                if (parentA) {
+                  interceptNav(parentA);
+                } else {
+                  // Standalone image — patch it too
+                  if (!img._bgAdapterNavPatched) {
+                    img._bgAdapterNavPatched = true;
+                    img.style.cursor = "pointer";
+                    img.addEventListener(
+                      "click",
+                      (ev) => {
+                        ev.preventDefault();
+                        ev.stopImmediatePropagation();
+
+                        const confirmed = globalThis.confirm(
+                          `Leave your current game and load "${title}"?`,
+                        );
+
+                        if (confirmed) {
+                          // Find nearest anchor sibling
+                          const nearestA =
+                            img.parentElement?.querySelector("a");
+                          const targetUrl =
+                            nearestA?.href || nearestA?.getAttribute("href");
+                          if (targetUrl) {
+                            win.open(targetUrl, "_blank");
+                          }
+                        }
+                      },
+                      true,
+                    );
+                  }
+                }
+              });
+              sib = sib.nextElementSibling;
+            }
+          });
+        }
+      }
+
       requestAnimationFrame(() => {
         if (dialog.open) {
           dialog.focus();
