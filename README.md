@@ -104,22 +104,11 @@ The Block Garden Knowledge Hub provides bundled **Agent Skills** and **Declarati
 
 ## 📦 How to Run & Build
 
-### Run Knowledge Hub Locally
+### Block Garden Knowledge Hub
 
-```sh
-npm install
-npm run dev
-```
+This repository is a static `shadow-claw-template` project deployed automatically to GitHub Pages via GitHub Actions (`.github/workflows/deploy-pages.yml`). It does not use a local `npm` dev server or build script.
 
-### Run Block Garden Locally
-
-```sh
-cd ../block-garden
-npm install
-npm start              # Starts dev server on http://localhost:3000
-npm test               # Run Jest test suite
-npx rollup -c          # Build ES module production bundle
-```
+- 🌐 **Live Portal**: [kherrick.github.io/block-garden-knowledge-hub](https://kherrick.github.io/block-garden-knowledge-hub/)
 
 ---
 
