@@ -1,4 +1,4 @@
-# 🌱 Block Garden Knowledge Hub
+# 🌱 [Block Garden Knowledge Hub](https://kherrick.github.io/block-garden-knowledge-hub/)
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/kherrick/block-garden)
 [![Live Game](https://img.shields.io/badge/Play_Live-Block_Garden-2e7d32?style=flat&logo=html5)](https://kherrick.github.io/block-garden/)
