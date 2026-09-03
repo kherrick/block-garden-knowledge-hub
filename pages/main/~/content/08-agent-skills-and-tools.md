@@ -37,7 +37,7 @@ Because ShadowClaw executes agent tool logic within an isolated Web Worker conte
 - **Engine API Delegation**: `block-garden-adapter.js` intercepts messages on the main thread, dynamically imports Block Garden modules (e.g. `oreLocator.mjs`, `Fireworks.mjs`, `KonamiCode.mjs`), and executes native game logic against `window.blockGarden`.
 - **Structured Data Returns**: Execution results and telemetry return to the worker thread via `"block-garden-results"` and render into chat threads.
 - **Sandboxed Iframe Navigation Interception**: In sandboxed `srcdoc` preview iframes (`about:srcdoc`), `block-garden-adapter.js` attaches capture-phase click handlers to Getting Started dialog game-save links (`h4 a`, `img`). This intercepts links before `block-garden`'s bubbling `location.href` handlers fire, prompting user confirmation and delegating navigation via `win.open(targetUrl, '_blank')` using `allow-popups-to-escape-sandbox`.
-- **Opaque-Origin Sandbox & Storage Proxying**: `site-config.json` enforces opaque-origin isolation without `allow-same-origin`, relying on ShadowClaw's `postMessage` storage bridge for IndexedDB game saves while permitting `cdn.jsdelivr.net` for external dependencies.
+- **Opaque-Origin Sandbox & Storage Proxying**: `shadow-claw.config.json` enforces opaque-origin isolation without `allow-same-origin`, relying on ShadowClaw's `postMessage` storage bridge for IndexedDB game saves while permitting `cdn.jsdelivr.net` for external dependencies.
 
 ---
 
@@ -79,7 +79,7 @@ Declarative tools under `.agents/tools/main/` define executable JSON tool defini
 
 ### ⚙️ 4. Initial Tool Enablement & Skill Purge Markers
 
-Site configuration (`site-config.json`) automatically enables these tools on initial site boot:
+Site configuration (`shadow-claw.config.json`) automatically enables these tools on initial site boot:
 
 ```json
 {
