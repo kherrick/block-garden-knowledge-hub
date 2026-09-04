@@ -13,19 +13,26 @@ Central routing directory for AI agents (including Prompt API built-in models) t
 
 ## 🛠️ Enabled Tools & 🧭 Skills
 
-Enabled via `shadow-claw.config.json` (`enabledTools`). Worker bridge, declarative tool schemas, and agent skill pipelines are detailed in [/main/agent-skills-and-tools](/main/agent-skills-and-tools).
+Enabled via `shadow-claw.config.json` (`enabledTools`) and discoverable headlessly over HTTP via `/.well-known/agent-skills/index.json`.
 
-### [Declarative Tools](/main/agent-skills-and-tools#3-declarative-tools-inventory)
+### Declarative Tools
 
 - **`scan_for_nearby_ores`**: Scans 3D voxel chunks for mineral deposits
 - **`fireworks`**: Ignites 3D voxel fireworks particle physics
 - **`konami_code`**: Unlocks secret Dev Mode & cheat controls
 
-### Agent Skills & Commands
+### Agent Skills & Slash Commands
 
-- **`/scan-for-nearby-ores`**: Ore locator chunk scanning workflow — See [/main/agent-skills-and-tools](/main/agent-skills-and-tools#1-scan-for-nearby-ores-scan-for-nearby-ores)
-- **`/fireworks`**: Voxel fireworks display launcher — See [/main/agent-skills-and-tools](/main/agent-skills-and-tools#2-voxel-fireworks-display-fireworks)
-- **`/konami-code`**: Secret Konami code execution sequence — See [/main/agent-skills-and-tools](/main/agent-skills-and-tools#3-secret-konami-code-unlocker-konami-code)
+- **`/scan-for-nearby-ores`**: Ore locator chunk scanning workflow
+- **`/fireworks`**: Voxel fireworks display launcher
+- **`/konami-code`**: Secret Konami code execution sequence
+
+### Architecture & Discovery
+
+- **Core Engine Script (`block-garden.js`)**: Decoupled, portable ESM containing tool execution handlers, module URLs, and event constants.
+- **Custom Element Factory (`block-garden-element.js`)**: Portable component factory, context resolver, and bridge installer.
+- **Presentation Adapter (`.agents/scripts/main/block-garden-adapter.js`)**: Bridges on-page custom elements, UI controls, and BroadcastChannel events.
+- **Discovery Endpoint**: `/.well-known/agent-skills/index.json` provides RFC-compliant discovery with SHA-256 digests and dependency mapping.
 
 ---
 

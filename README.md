@@ -65,7 +65,7 @@ Block Garden stands out as a pioneering **Web-Platform-as-OS** reference impleme
 - 🌾 **Farming Engine & 20+ Botanical Species**: Evaluates soil types (dirt, farmland, sand, clay, water), soil hydration, BFS light levels, and growth ticks for wheat, corn, carrots, pumpkins, roses, sunflowers, bamboo, cacti, trees, mushrooms, and aquatic plants.
 - 💾 **Privacy-First PDF Postcards**: World saves encoded to gzip JSON, embedded into custom PNG `tEXt` chunks (`gamestate`) with CRC32 checksums, and rendered onto printable PDF postcards with `pdf-lib`.
 - 🔌 **Public Modding API**: Extensible runtime scripting API (`src/api/BlockGarden.mjs`) supporting one-click bookmarklets and live browser console script execution.
-- 🛡️ **Hardened Sandboxed Iframe Support**: Operates within strict opaque-origin (`null`) iframe sandboxes without `allow-same-origin`, using parent `postMessage` storage proxying for IndexedDB game saves, `cdn.jsdelivr.net` CSP origin rules, and capture-phase click interception in `block-garden-adapter.js` to launch game-save URLs in new tabs (`win.open(..., '_blank')`) via `allow-popups-to-escape-sandbox`.
+- 🛡️ **Hardened Sandboxed Iframe Support**: Operates within strict opaque-origin (`null`) iframe sandboxes without `allow-same-origin`, using parent `postMessage` storage proxying for IndexedDB game saves, `cdn.jsdelivr.net` CSP origin rules, and capture-phase click interception in `.agents/scripts/main/block-garden-adapter.js` to launch game-save URLs in new tabs (`win.open(..., '_blank')`) via `allow-popups-to-escape-sandbox`.
 
 ---
 
@@ -91,14 +91,24 @@ Block Garden stands out as a pioneering **Web-Platform-as-OS** reference impleme
 
 ## 🤖 Agent Skills & Declarative Tools
 
-The Block Garden Knowledge Hub provides bundled **Agent Skills** and **Declarative Tools** under `.agents/` for the integrated ShadowClaw AI assistant (`BlockGardener`):
+The Block Garden Knowledge Hub exposes bundled **Agent Skills**, **Declarative Tools**, and **Slash Commands** for the integrated ShadowClaw AI assistant (`BlockGardener`):
 
-- 🧭 **`.agents/skills/main/scan-for-nearby-ores/SKILL.md`**: Scans loaded voxel chunks for nearby ore deposits around player coordinates (`/scan-for-nearby-ores`).
-- 🎆 **`.agents/skills/main/fireworks/SKILL.md`**: Real-time 3D voxel fireworks particle physics display (`/fireworks`).
-- 🎮 **`.agents/skills/main/konami-code/SKILL.md`**: Secret Konami Code sequence unlocker for dev mode & ore locator (`/konami-code`).
-- 🧭 **`.agents/tools/main/scan_for_nearby_ores.json`**: Declarative tool scanning loaded voxel chunks for nearby ore deposits.
-- 🎆 **`.agents/tools/main/fireworks.json`**: Declarative tool triggering 3D voxel fireworks particle bursts.
-- 🎮 **`.agents/tools/main/konami_code.json`**: Declarative tool triggering Konami Code sequence and dev mode unlock.
+- 🧭 **`scan_for_nearby_ores`** (`/scan-for-nearby-ores`): Scans loaded voxel chunks for nearby ore deposits around player coordinates.
+- 🎆 **`fireworks`** (`/fireworks`): Real-time 3D voxel fireworks particle physics display.
+- 🎮 **`konami_code`** (`/konami-code`): Secret Konami Code sequence unlocker for dev mode & ore locator.
+
+### Decoupled Engine & Presentation Architecture
+
+- **Core Engine Script (`block-garden.js`)**: Portable ESM module containing game API module loaders, parameter parsing, and tool execution handlers with zero direct DOM dependencies.
+- **Host Presentation Adapter (`.agents/scripts/main/block-garden-adapter.js`)**: Manages `<block-garden>` canvas sizing, responsive layout, fullscreen controls, and the `BroadcastChannel` bridge.
+
+### Standard Discovery Endpoint
+
+Discoverable headlessly over HTTP per the [Agent Skills Discovery RFC](https://github.com/cloudflare/agent-skills-discovery-rfc):
+
+```
+/.well-known/agent-skills/index.json
+```
 
 ---
 

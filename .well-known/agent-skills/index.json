@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "name": "Block Garden - Knowledge Hub",
+  "description": "3D sandbox exploration, procedural world generation, farming, and interactive game engine documentation powered by ShadowClaw.",
+  "skills": [
+    {
+      "name": "fireworks",
+      "type": "skill-md",
+      "description": "Launches real-time 3D voxel fireworks particle physics displays in the sky using Block Garden's API.",
+      "url": "../../.agents/skills/main/fireworks/SKILL.md",
+      "digest": "sha256:f49705f9347b5a6962128d58cc0613bf7082500d99d4351224a9ab32e324f541",
+      "tools": [
+        {
+          "name": "fireworks",
+          "url": "../../.agents/tools/main/fireworks.json",
+          "digest": "sha256:4cb523885184d372bb68cf75676dac2e701b4e848466b167cf13b61b98a64e3e"
+        }
+      ]
+    },
+    {
+      "name": "konami-code",
+      "type": "skill-md",
+      "description": "Executes the secret Konami Code sequence (↑ ↑ ↓ ↓ ← → ← → B A) to unlock dev mode, ore depth locator, fast growth, and hidden menu items.",
+      "url": "../../.agents/skills/main/konami-code/SKILL.md",
+      "digest": "sha256:76617d7b58e971d912fe0622b738cd130dd74dafdd4f21a4d828387883f15675",
+      "tools": [
+        {
+          "name": "konami_code",
+          "url": "../../.agents/tools/main/konami_code.json",
+          "digest": "sha256:1100a95f609e3aac683d9b61063c8a8960b0ac0eafd8f13c305dfd276ec4de49"
+        }
+      ]
+    },
+    {
+      "name": "scan-for-nearby-ores",
+      "type": "skill-md",
+      "description": "Scans loaded Block Garden voxel chunks for nearby ore deposits around player coordinates.",
+      "url": "../../.agents/skills/main/scan-for-nearby-ores/SKILL.md",
+      "digest": "sha256:a2de0673a0f372613e11d792f4f7268915cce986a07c1089a3db790a5b423f54",
+      "tools": [
+        {
+          "name": "scan_for_nearby_ores",
+          "url": "../../.agents/tools/main/scan_for_nearby_ores.json",
+          "digest": "sha256:0ad74e1a63c6764267178241ba4a092d80571410116a86d5e6ac3b055dd40fd6"
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "fireworks",
+      "description": "Launches a 3D voxel fireworks particle display inside the live Block Garden world.",
+      "url": "../../.agents/tools/main/fireworks.json",
+      "digest": "sha256:4cb523885184d372bb68cf75676dac2e701b4e848466b167cf13b61b98a64e3e"
+    },
+    {
+      "name": "konami_code",
+      "description": "Executes the secret Konami Code sequence in Block Garden to unlock dev mode, ore depth scanner, fast growth, and hidden options.",
+      "url": "../../.agents/tools/main/konami_code.json",
+      "digest": "sha256:1100a95f609e3aac683d9b61063c8a8960b0ac0eafd8f13c305dfd276ec4de49"
+    },
+    {
+      "name": "scan_for_nearby_ores",
+      "description": "Triggers Block Garden's actual in-game Ore Locator scanner on loaded voxel chunks around player coordinates and captures HUD toast results.",
+      "url": "../../.agents/tools/main/scan_for_nearby_ores.json",
+      "digest": "sha256:0ad74e1a63c6764267178241ba4a092d80571410116a86d5e6ac3b055dd40fd6"
+    }
+  ],
+  "scripts": [
+    {
+      "name": "block-garden-adapter",
+      "description": "Portable ESM engine logic and tool execution handler for block-garden-adapter.",
+      "url": "../../.agents/scripts/main/block-garden-adapter.js",
+      "digest": "sha256:8acff4938f345dd56602239215f3c082e9ce5ae848dd1af7846397e76fe7236a"
+    },
+    {
+      "name": "block-garden-element",
+      "description": "Portable ESM engine logic and tool execution handler for block-garden-element.",
+      "url": "../../.agents/scripts/main/block-garden-element.js",
+      "digest": "sha256:d1d00b42d09aa3f1bd2cd83b0761c38185118c8e34e2cdd5977c60cb7085fc60"
+    },
+    {
+      "name": "block-garden",
+      "description": "Portable ESM engine logic and tool execution handler for block-garden.",
+      "url": "../../.agents/scripts/main/block-garden.js",
+      "digest": "sha256:d4125bfd0f29d7b2b0e0c0b904266a57e68b30634556ed254c9ade702a3e8fc1"
+    }
+  ],
+  "dependencies": {
+    "tools": [
+      "../../.agents/tools/main/fireworks.json",
+      "../../.agents/tools/main/konami_code.json",
+      "../../.agents/tools/main/scan_for_nearby_ores.json"
+    ],
+    "scripts": [
+      "../../.agents/scripts/main/block-garden-adapter.js",
+      "../../.agents/scripts/main/block-garden-element.js",
+      "../../.agents/scripts/main/block-garden.js"
+    ]
+  }
+}
