@@ -28,3 +28,8 @@ Run `/fireworks` to launch a fireworks display:
 ```
 /fireworks
 ```
+
+## Prerequisites & Environment
+
+- **Interactive Canvas Requirement**: Requires the `<x-block-garden>` 3D game canvas to be loaded in a browser page or tab.
+- **Graceful Detection**: If the 3D world is not running, the tool returns actionable instructions rather than failing or timing out.

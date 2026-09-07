@@ -23,3 +23,8 @@ Execute `/scan-for-nearby-ores` to perform a proximity scan of surrounding chunk
 ```
 /scan-for-nearby-ores
 ```
+
+## Prerequisites & Environment
+
+- **Interactive Canvas Requirement**: Requires the `<x-block-garden>` 3D game canvas to be loaded with an active player in the world.
+- **Graceful Detection**: If the game is not running, the tool returns actionable instructions rather than timing out.

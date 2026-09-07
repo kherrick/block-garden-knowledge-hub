@@ -1,6 +1,6 @@
 {
   "name": "scan_for_nearby_ores",
-  "description": "Triggers Block Garden's actual in-game Ore Locator scanner on loaded voxel chunks around player coordinates and captures HUD toast results.",
+  "description": "Triggers Block Garden's in-game Ore Locator scanner on loaded voxel chunks around player coordinates.",
   "input_schema": {
     "type": "object",
     "properties": {
@@ -12,6 +12,6 @@
   },
   "execution": {
     "type": "javascript",
-    "code": "const requestId = Math.random().toString(36).slice(2); const commandChannel = new BroadcastChannel('block-garden-commands'); const resultsChannel = new BroadcastChannel('block-garden-results'); const result = await new Promise((resolve) => { const timer = setTimeout(() => { resultsChannel.close(); resolve('\\ud83e\\uddedOre scan timed out. The game may not be loaded yet.'); }, 10000); resultsChannel.onmessage = (evt) => { if (evt.data && evt.data.requestId === requestId) { clearTimeout(timer); resultsChannel.close(); resolve(evt.data.result); } }; commandChannel.postMessage({ type: 'blockgarden:scanores', requestId }); commandChannel.close(); }); return '\\n\\n### \\ud83e\\udded Block Garden Ore Locator\\n\\n' + result;"
+    "code": "const requestId = Math.random().toString(36).slice(2); const cmd = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('block-garden-commands') : null; const res = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('block-garden-results') : null; if (!cmd || !res) { return '⚠️ Live 3D World Not Connected: BroadcastChannel is unavailable in this environment.'; } const result = await new Promise((resolve) => { const timer = setTimeout(() => { res.close(); resolve('⚠️ Live 3D World Not Connected:\\nThe \"scan_for_nearby_ores\" tool reads voxel chunk data from an active <block-garden> instance, but no live game was detected in this session.\\n\\nTo enable the live 3D world in ShadowClaw:\\n1. Allowlist <block-garden> and its scripts in shadow-claw.config.json under \"customElements\":\\n   • allowedElements: [\"block-garden\", \"block-garden-option\", \"block-garden-select\"]\\n   • scripts: adapter ({ \"src\": \"...\", \"hasInit\": true }) and bundle\\n2. Pin a page in view (e.g., in Pages or Split View) containing:\\n   <block-garden id=\"live-block-garden\" data-no-nav></block-garden>\\n   (Keeping the page pinned keeps the 3D world active with coordinates loaded while you chat or scan. Do not add inline <script> tags).\\n\\nInstructions for the Agent:\\nExplain to the user that real-time ore telemetry requires an active Block Garden game session. Remind the user to ensure <block-garden> and its scripts are configured in shadow-claw.config.json and that a page containing <block-garden id=\"live-block-garden\" data-no-nav></block-garden> is pinned in view while running the tool.'); }, 350); res.onmessage = (evt) => { if (evt.data && evt.data.requestId === requestId) { clearTimeout(timer); res.close(); resolve(evt.data.result); } }; cmd.postMessage({ type: 'blockgarden:scanores', requestId }); cmd.close(); }); return '\\n\\n### 🧭 Block Garden Ore Locator\\n\\n' + result;"
   }
 }

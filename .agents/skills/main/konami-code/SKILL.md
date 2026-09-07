@@ -31,3 +31,8 @@ Execute `/konami-code` to trigger the sequence:
 ```
 /konami-code
 ```
+
+## Prerequisites & Environment
+
+- **Interactive Canvas Requirement**: Requires the `<x-block-garden>` 3D game canvas to be loaded in a browser page or tab to receive cheat events.
+- **Graceful Detection**: If the game canvas is not active, the tool returns actionable instructions rather than timing out.

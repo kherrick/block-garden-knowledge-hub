@@ -8,12 +8,12 @@
       "type": "skill-md",
       "description": "Launches real-time 3D voxel fireworks particle physics displays in the sky using Block Garden's API.",
       "url": "../../.agents/skills/main/fireworks/SKILL.md",
-      "digest": "sha256:f49705f9347b5a6962128d58cc0613bf7082500d99d4351224a9ab32e324f541",
+      "digest": "sha256:d4b09b9ffbbe2fcc9f6fe529b08bd6844f1a9e51e517937004b6fc22afb53b01",
       "tools": [
         {
           "name": "fireworks",
           "url": "../../.agents/tools/main/fireworks.json",
-          "digest": "sha256:4cb523885184d372bb68cf75676dac2e701b4e848466b167cf13b61b98a64e3e"
+          "digest": "sha256:38172ce3a85c8209d043335ec89d0575ddb06382491fe0678c0b222ac82a7528"
         }
       ]
     },
@@ -22,12 +22,12 @@
       "type": "skill-md",
       "description": "Executes the secret Konami Code sequence (↑ ↑ ↓ ↓ ← → ← → B A) to unlock dev mode, ore depth locator, fast growth, and hidden menu items.",
       "url": "../../.agents/skills/main/konami-code/SKILL.md",
-      "digest": "sha256:76617d7b58e971d912fe0622b738cd130dd74dafdd4f21a4d828387883f15675",
+      "digest": "sha256:f230e17f365fbd59914a692ef51b8dca09801e4a9b0b2132aeed0aaa1ccd1fcb",
       "tools": [
         {
           "name": "konami_code",
           "url": "../../.agents/tools/main/konami_code.json",
-          "digest": "sha256:1100a95f609e3aac683d9b61063c8a8960b0ac0eafd8f13c305dfd276ec4de49"
+          "digest": "sha256:bbc4cd1381be79db27daf5491aaaa025fbc6040846961712a3694564ac5e1c88"
         }
       ]
     },
@@ -36,12 +36,12 @@
       "type": "skill-md",
       "description": "Scans loaded Block Garden voxel chunks for nearby ore deposits around player coordinates.",
       "url": "../../.agents/skills/main/scan-for-nearby-ores/SKILL.md",
-      "digest": "sha256:a2de0673a0f372613e11d792f4f7268915cce986a07c1089a3db790a5b423f54",
+      "digest": "sha256:a8e32c162da87e1e9f5930c4d31aeed8167458d7a7e8932c7173ed0e4eb11583",
       "tools": [
         {
           "name": "scan_for_nearby_ores",
           "url": "../../.agents/tools/main/scan_for_nearby_ores.json",
-          "digest": "sha256:0ad74e1a63c6764267178241ba4a092d80571410116a86d5e6ac3b055dd40fd6"
+          "digest": "sha256:952acb0933f20eec90cdb7ed9c94a3b21f5f1a05f9336358a77ff894a0e32ed8"
         }
       ]
     },
@@ -50,7 +50,7 @@
       "type": "skill-md",
       "description": "Create, edit, review, and validate ShadowClaw declarative skills and their supporting resources.",
       "url": "../../.agents/skills/main/skill-creator/SKILL.md",
-      "digest": "sha256:e9876a79ab38c3a9acd0a990f2a26a578e1971abc2f3cd0eeda1988e6529f684"
+      "digest": "sha256:21cdf3af5603edd566c6cca9a02c8ac2489b51ff0d984862fb09804c72bd553a"
     }
   ],
   "tools": [
@@ -58,19 +58,19 @@
       "name": "fireworks",
       "description": "Launches a 3D voxel fireworks particle display inside the live Block Garden world.",
       "url": "../../.agents/tools/main/fireworks.json",
-      "digest": "sha256:4cb523885184d372bb68cf75676dac2e701b4e848466b167cf13b61b98a64e3e"
+      "digest": "sha256:38172ce3a85c8209d043335ec89d0575ddb06382491fe0678c0b222ac82a7528"
     },
     {
       "name": "konami_code",
       "description": "Executes the secret Konami Code sequence in Block Garden to unlock dev mode, ore depth scanner, fast growth, and hidden options.",
       "url": "../../.agents/tools/main/konami_code.json",
-      "digest": "sha256:1100a95f609e3aac683d9b61063c8a8960b0ac0eafd8f13c305dfd276ec4de49"
+      "digest": "sha256:bbc4cd1381be79db27daf5491aaaa025fbc6040846961712a3694564ac5e1c88"
     },
     {
       "name": "scan_for_nearby_ores",
-      "description": "Triggers Block Garden's actual in-game Ore Locator scanner on loaded voxel chunks around player coordinates and captures HUD toast results.",
+      "description": "Triggers Block Garden's in-game Ore Locator scanner on loaded voxel chunks around player coordinates.",
       "url": "../../.agents/tools/main/scan_for_nearby_ores.json",
-      "digest": "sha256:0ad74e1a63c6764267178241ba4a092d80571410116a86d5e6ac3b055dd40fd6"
+      "digest": "sha256:952acb0933f20eec90cdb7ed9c94a3b21f5f1a05f9336358a77ff894a0e32ed8"
     }
   ],
   "scripts": [
