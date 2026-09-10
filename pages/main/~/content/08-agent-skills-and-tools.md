@@ -109,17 +109,47 @@ Agent Skills provide deterministic execution pipelines and guidance for the AI a
 - **Declarative Tool**: `konami_code`
 - **Capabilities**: Automates execution of the iconic cheat code sequence ($\uparrow \uparrow \downarrow \downarrow \leftarrow \rightarrow \leftarrow \rightarrow \text{B } \text{A}$) to instantly unlock Dev Mode, fast growth, solid cloud toggles, and hidden UI menu items.
 
+#### 4. 💬 Voxel Sky Messaging (`/messaging`)
+
+- **Declarative Tool**: `messaging`
+- **Capabilities**: Draws customizable 3D voxel text messages in the sky above the player using `Messaging.mjs`. Supports single or multi-line messages, customizable letter block types (Snow, Gold, Iron, etc.), background contrast blocks (Coal, Air, Glass, etc.), and 3D orientation/rotation.
+
+#### 5. 🔗 Interactive Voxel Hyperlinks (`/link`)
+
+- **Declarative Tool**: `link`
+- **Capabilities**: Constructs clickable/mineable 3D voxel hyperlinks using `Link.mjs`. When a player mines or punches any letter block of the link, Block Garden opens the configured URL in a new browser tab and restores the block for subsequent interactions.
+
+#### 6. 🎮 Playable 3D Tic-Tac-Toe Minigame (`/tic-tac-toe`)
+
+- **Declarative Tool**: `tic_tac_toe`
+- **Capabilities**: Builds a complete, interactive two-player 3D Tic-Tac-Toe board in the voxel world using `TicTacToe.mjs`. Players take turns breaking cells to cycle marks (Empty $\to$ X $\to$ O $\to$ Empty), with automatic win-line illumination and an in-world Iron reset button.
+
+#### 7. 📸 Voxel Photo & Image Renderer (`/photo`)
+
+- **Declarative Tool**: `photo`
+- **Capabilities**: Quantizes digital photos, web image URLs, or base64 data URIs into 3D voxel mosaics using `Photo.mjs`. Downsamples image data, maps colors to the nearest block materials using Euclidean RGB distance, and optionally optimizes in-game CSS palette variables.
+
+#### 8. 📹 Live Voxel Video Screen (`/video`)
+
+- **Declarative Tool**: `video`
+- **Capabilities**: Streams real-time webcam frames onto a 3D voxel screen in the world using `Video.mjs`. Includes interactive in-world Grass (Start) and Rose (Stop) trigger buttons, customizable display dimensions, frame rate controls, and gamma correction.
+
 ---
 
 ### 🛠️ 3. Declarative Tools Inventory
 
-The hub exposes three declarative tools registered in `shadow-claw.config.json` under `enabledTools`:
+The hub exposes eight declarative tools registered in `shadow-claw.config.json` under `enabledTools`:
 
 | Tool Name                  | Purpose & Execution Behavior                                                          |
 | :------------------------- | :------------------------------------------------------------------------------------ |
 | **`scan_for_nearby_ores`** | Scans loaded voxel chunks around player coordinates and returns formatted ore totals. |
 | **`fireworks`**            | Triggers a 3D voxel fireworks particle burst in the WebGL world.                      |
 | **`konami_code`**          | Triggers the secret Konami Code sequence and unlocks developer settings.              |
+| **`messaging`**            | Renders custom 3D voxel text messages in the sky with configurable fonts and blocks.  |
+| **`link`**                 | Creates interactive voxel hyperlinks that open destination URLs when mined/broken.    |
+| **`tic_tac_toe`**          | Spawns a playable 3D Tic-Tac-Toe minigame board with win detection and reset button.  |
+| **`photo`**                | Quantizes and renders any image URL or photo into a 3D voxel pixel mosaic.            |
+| **`video`**                | Streams live webcam frames onto an in-world voxel screen with start/stop buttons.     |
 
 ---
 
@@ -138,7 +168,16 @@ Site configuration (`shadow-claw.config.json`) automatically enables these tools
       "https://kherrick.github.io/block-garden/block-garden-bundle-min.mjs"
     ]
   },
-  "enabledTools": ["scan_for_nearby_ores", "fireworks", "konami_code"]
+  "enabledTools": [
+    "scan_for_nearby_ores",
+    "fireworks",
+    "konami_code",
+    "messaging",
+    "link",
+    "tic_tac_toe",
+    "photo",
+    "video"
+  ]
 }
 ```
 

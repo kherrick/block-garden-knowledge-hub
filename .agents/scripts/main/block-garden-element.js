@@ -14,6 +14,11 @@ import {
   executeOreScan,
   runFireworks,
   runKonamiCode,
+  runMessaging,
+  runLink,
+  runTicTacToe,
+  runPhoto,
+  runVideo,
 } from "./block-garden.js";
 
 export const BUNDLE_URL =
@@ -234,6 +239,7 @@ export function installBlockGardenBridge(options = {}) {
     if (!type || !requestId) return;
 
     const resultChannel = new BroadcastChannel(resultChannelName);
+    resultChannel.postMessage({ requestId, ack: true });
     let result = "";
     try {
       const ctx = findBlockGardenContext();
@@ -283,6 +289,18 @@ export function renderBlockGarden(container, options = {}) {
   };
 }
 
+export {
+  runFireworks,
+  runKonamiCode,
+  executeOreScan,
+  runMessaging,
+  runLink,
+  runTicTacToe,
+  runPhoto,
+  runVideo,
+  handleToolCommand,
+};
+
 export default {
   BUNDLE_URL,
   SELECTORS,
@@ -293,4 +311,13 @@ export default {
   wireResponsiveProperties,
   installBlockGardenBridge,
   renderBlockGarden,
+  runFireworks,
+  runKonamiCode,
+  executeOreScan,
+  runMessaging,
+  runLink,
+  runTicTacToe,
+  runPhoto,
+  runVideo,
+  handleToolCommand,
 };

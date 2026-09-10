@@ -76,6 +76,11 @@ import {
   runFireworks,
   runKonamiCode,
   executeOreScan,
+  runMessaging,
+  runLink,
+  runTicTacToe,
+  runPhoto,
+  runVideo,
   handleToolCommand,
 } from "./block-garden.js";
 import {
@@ -848,5 +853,14 @@ export {
   setupResponsiveElement,
   toggleFullscreen,
   toggleExpand,
+  runFireworks,
+  runKonamiCode,
+  executeOreScan,
+  runMessaging,
+  runLink,
+  runTicTacToe,
+  runPhoto,
+  runVideo,
+  handleToolCommand,
 };
 export default init;

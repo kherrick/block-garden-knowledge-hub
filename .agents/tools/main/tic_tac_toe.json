@@ -1,0 +1,57 @@
+{
+  "name": "tic_tac_toe",
+  "description": "Creates an interactive, playable 3D voxel Tic-Tac-Toe minigame in Block Garden. Players break blocks to place X or O, and break the Iron button above the board to reset.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "x": {
+        "type": "number",
+        "description": "X coordinate for board placement (defaults to centered in front of player)."
+      },
+      "y": {
+        "type": "number",
+        "description": "Y coordinate for board placement (default: 58)."
+      },
+      "z": {
+        "type": "number",
+        "description": "Z coordinate for board placement (default: 25)."
+      },
+      "cellSize": {
+        "type": "number",
+        "description": "Size in blocks of each cell on the 3x3 board (default: 5)."
+      },
+      "spacing": {
+        "type": "number",
+        "description": "Spacing in blocks between cells (default: 2)."
+      },
+      "xBlock": {
+        "type": "string",
+        "description": "Block material for player X (default: 'Coal')."
+      },
+      "oBlock": {
+        "type": "string",
+        "description": "Block material for player O (default: 'Snow')."
+      },
+      "emptyBlock": {
+        "type": "string",
+        "description": "Block material for empty cells (default: 'Ice')."
+      },
+      "borderBlock": {
+        "type": "string",
+        "description": "Block material for board border frame (default: 'Bedrock')."
+      },
+      "lineBlock": {
+        "type": "string",
+        "description": "Block material for winning line indicator (default: 'Gold')."
+      },
+      "action": {
+        "type": "string",
+        "description": "Optional board action: 'spawn' or 'reset' (default: 'spawn')."
+      }
+    }
+  },
+  "execution": {
+    "type": "javascript",
+    "code": "const requestId = Math.random().toString(36).slice(2); const cmd = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('block-garden-commands') : null; const res = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('block-garden-results') : null; if (!cmd || !res) { return '⚠️ Live 3D World Not Connected: BroadcastChannel is unavailable in this environment.'; } let params = {}; try { if (typeof $PIPE_DATA !== 'undefined' && $PIPE_DATA) params = JSON.parse($PIPE_DATA); } catch (e) {} const result = await new Promise((resolve) => { let timer = setTimeout(() => { res.close(); resolve('⚠️ Live 3D World Not Connected:\\nThe \"tic_tac_toe\" tool creates an interactive 3D minigame board inside an active Block Garden game (<block-garden>), but no live game instance was detected in this session.\\n\\nTo enable the live 3D world in ShadowClaw:\\n1. Allowlist <block-garden> and its scripts in shadow-claw.config.json under \"customElements\":\\n   • allowedElements: [\"block-garden\", \"block-garden-option\", \"block-garden-select\"]\\n   • scripts: adapter ({ \"src\": \"...\", \"hasInit\": true }) and bundle\\n2. Pin a page in view (e.g., in Pages or Split View) containing:\\n   <block-garden id=\"live-block-garden\" data-no-nav></block-garden>\\n   (Keeping the page pinned keeps the 3D world active while you chat or execute commands. Do not add inline <script> tags).\\n\\nInstructions for the Agent:\\nExplain to the user that this tool builds a playable Tic-Tac-Toe minigame in the voxel world. Remind the user to ensure <block-garden> and its scripts are configured in shadow-claw.config.json and that a page containing <block-garden id=\"live-block-garden\" data-no-nav></block-garden> is pinned in view while running the tool.'); }, 2000); res.onmessage = (e) => { if (e.data && e.data.requestId === requestId) { if (e.data.ack) { clearTimeout(timer); timer = setTimeout(() => { res.close(); resolve(\"⏱️ Timed out waiting for Block Garden to finish processing.\"); }, 30000); } else if (e.data.result !== undefined) { clearTimeout(timer); res.close(); resolve(e.data.result); } } }; cmd.postMessage({ type: 'blockgarden:tictactoe', requestId, params }); cmd.close(); }); return result;"
+  }
+}

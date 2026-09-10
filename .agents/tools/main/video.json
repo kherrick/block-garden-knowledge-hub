@@ -1,0 +1,57 @@
+{
+  "name": "video",
+  "description": "Creates an in-world real-time camera video display screen in Block Garden. Maps live webcam frames directly into 3D voxel blocks.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "videoUrl": {
+        "type": "string",
+        "description": "Direct URL or data URI of an MP4/WebM video to stream into the 3D voxel screen (falls back to webcam if omitted)."
+      },
+      "url": {
+        "type": "string",
+        "description": "Alias for videoUrl."
+      },
+      "width": {
+        "type": "number",
+        "description": "Display screen width in blocks (default: 48)."
+      },
+      "height": {
+        "type": "number",
+        "description": "Display screen height in blocks (default: 36)."
+      },
+      "fps": {
+        "type": "number",
+        "description": "Capture frame rate from 0.5 to 30 FPS (default: 2)."
+      },
+      "x": {
+        "type": "number",
+        "description": "Screen bottom-left X position (defaults to centered in front of player)."
+      },
+      "y": {
+        "type": "number",
+        "description": "Screen bottom-left Y position (default: 55)."
+      },
+      "z": {
+        "type": "number",
+        "description": "Screen Z plane position (default: 25)."
+      },
+      "facingMode": {
+        "type": "string",
+        "description": "Camera facing mode: 'user' (front camera/webcam) or 'environment' (back camera) (default: 'user')."
+      },
+      "autoStart": {
+        "type": "boolean",
+        "description": "Whether to immediately request webcam access and start capturing frames (default: false)."
+      },
+      "action": {
+        "type": "string",
+        "description": "Video control command: 'start', 'stop', 'setFPS', or 'setGamma'."
+      }
+    }
+  },
+  "execution": {
+    "type": "javascript",
+    "code": "const requestId = Math.random().toString(36).slice(2); const cmd = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('block-garden-commands') : null; const res = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('block-garden-results') : null; if (!cmd || !res) { return '⚠️ Live 3D World Not Connected: BroadcastChannel is unavailable in this environment.'; } let params = {}; try { if (typeof $PIPE_DATA !== 'undefined' && $PIPE_DATA) params = JSON.parse($PIPE_DATA); } catch (e) {} const result = await new Promise((resolve) => { let timer = setTimeout(() => { res.close(); resolve('⚠️ Live 3D World Not Connected:\\nThe \"video\" tool mounts a live webcam video feed screen inside an active Block Garden game (<block-garden>), but no live game instance was detected in this session.\\n\\nTo enable the live 3D world in ShadowClaw:\\n1. Allowlist <block-garden> and its scripts in shadow-claw.config.json under \"customElements\":\\n   • allowedElements: [\"block-garden\", \"block-garden-option\", \"block-garden-select\"]\\n   • scripts: adapter ({ \"src\": \"...\", \"hasInit\": true }) and bundle\\n2. Pin a page in view (e.g., in Pages or Split View) containing:\\n   <block-garden id=\"live-block-garden\" data-no-nav></block-garden>\\n   (Keeping the page pinned keeps the 3D world active while you chat or execute commands. Do not add inline <script> tags).\\n\\nInstructions for the Agent:\\nExplain to the user that this tool streams live camera frames onto a voxel screen in the world. Remind the user to ensure <block-garden> and its scripts are configured in shadow-claw.config.json and that a page containing <block-garden id=\"live-block-garden\" data-no-nav></block-garden> is pinned in view while running the tool.'); }, 2000); res.onmessage = (e) => { if (e.data && e.data.requestId === requestId) { if (e.data.ack) { clearTimeout(timer); timer = setTimeout(() => { res.close(); resolve(\"⏱️ Timed out waiting for Block Garden to finish processing.\"); }, 30000); } else if (e.data.result !== undefined) { clearTimeout(timer); res.close(); resolve(e.data.result); } } }; cmd.postMessage({ type: 'blockgarden:video', requestId, params }); cmd.close(); }); return result;"
+  }
+}

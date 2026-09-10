@@ -70,5 +70,14 @@
     "assistantName": "BlockGardener",
     "defaultToolsProfile": "none"
   },
-  "enabledTools": ["scan_for_nearby_ores", "fireworks", "konami_code"]
+  "enabledTools": [
+    "scan_for_nearby_ores",
+    "fireworks",
+    "konami_code",
+    "messaging",
+    "link",
+    "tic_tac_toe",
+    "photo",
+    "video"
+  ]
 }

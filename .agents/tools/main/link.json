@@ -1,0 +1,45 @@
+{
+  "name": "link",
+  "description": "Places an interactive 3D voxel link in the world that opens any destination URL when broken/mined by the player.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "Label text to display in 3D voxels (default: 'Block Garden')."
+      },
+      "url": {
+        "type": "string",
+        "description": "Destination URL to open when clicked/mined (default: 'https://github.com/kherrick/block-garden')."
+      },
+      "x": {
+        "type": "number",
+        "description": "World X coordinate for the link (default: 20)."
+      },
+      "y": {
+        "type": "number",
+        "description": "World Y coordinate for the link (default: 60)."
+      },
+      "z": {
+        "type": "number",
+        "description": "World Z coordinate for the link (default: 25)."
+      },
+      "target": {
+        "type": "string",
+        "description": "Target window browsing context, e.g. '_blank' or '_self' (default: '_blank')."
+      },
+      "onBlock": {
+        "type": "string",
+        "description": "Block type for text letters (default: 'Gold')."
+      },
+      "offBlock": {
+        "type": "string",
+        "description": "Block type for background (default: 'Air')."
+      }
+    }
+  },
+  "execution": {
+    "type": "javascript",
+    "code": "const requestId = Math.random().toString(36).slice(2); const cmd = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('block-garden-commands') : null; const res = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('block-garden-results') : null; if (!cmd || !res) { return '⚠️ Live 3D World Not Connected: BroadcastChannel is unavailable in this environment.'; } let params = {}; try { if (typeof $PIPE_DATA !== 'undefined' && $PIPE_DATA) params = JSON.parse($PIPE_DATA); } catch (e) {} const result = await new Promise((resolve) => { let timer = setTimeout(() => { res.close(); resolve('⚠️ Live 3D World Not Connected:\\nThe \"link\" tool creates interactive voxel hyperlinks inside an active Block Garden game (<block-garden>), but no live game instance was detected in this session.\\n\\nTo enable the live 3D world in ShadowClaw:\\n1. Allowlist <block-garden> and its scripts in shadow-claw.config.json under \"customElements\":\\n   • allowedElements: [\"block-garden\", \"block-garden-option\", \"block-garden-select\"]\\n   • scripts: adapter ({ \"src\": \"...\", \"hasInit\": true }) and bundle\\n2. Pin a page in view (e.g., in Pages or Split View) containing:\\n   <block-garden id=\"live-block-garden\" data-no-nav></block-garden>\\n   (Keeping the page pinned keeps the 3D world active while you chat or execute commands. Do not add inline <script> tags).\\n\\nInstructions for the Agent:\\nExplain to the user that this tool places an interactive voxel link in the world. Remind the user to ensure <block-garden> and its scripts are configured in shadow-claw.config.json and that a page containing <block-garden id=\"live-block-garden\" data-no-nav></block-garden> is pinned in view while running the tool.'); }, 2000); res.onmessage = (e) => { if (e.data && e.data.requestId === requestId) { if (e.data.ack) { clearTimeout(timer); timer = setTimeout(() => { res.close(); resolve(\"⏱️ Timed out waiting for Block Garden to finish processing.\"); }, 30000); } else if (e.data.result !== undefined) { clearTimeout(timer); res.close(); resolve(e.data.result); } } }; cmd.postMessage({ type: 'blockgarden:link', requestId, params }); cmd.close(); }); return result;"
+  }
+}

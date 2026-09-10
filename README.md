@@ -20,6 +20,40 @@ Welcome to the official **Block Garden Knowledge Hub**! This project is an exhau
 
 ---
 
+## 🚀 Quick Start (Local Development)
+
+Run the Block Garden Knowledge Hub locally using the `shadow-claw` CLI with zero installation:
+
+### 1. Launch Live Development Server
+
+Start the local server and automatically open the site in your default browser:
+
+```bash
+npx shadow-claw dev --open -y
+```
+
+- 🌐 Serves the interactive knowledge hub and live 3D game on **`http://127.0.0.1:8888`**
+- `--open`: Automatically opens your default web browser on launch
+- `-y`: Accepts the default cache directory (`.cache`) without interactive prompts
+
+### 2. Common CLI Options
+
+```bash
+# Run on a custom port
+npx shadow-claw dev 3000 --open -y
+
+# Run headlessly without opening a browser
+npx shadow-claw dev -y
+
+# Build the static distribution into ./dist/public
+npx shadow-claw build
+
+# Serve pre-built static distribution
+npx shadow-claw serve
+```
+
+---
+
 ## 📸 Media Showcase & Engine Assets
 
 Below is the complete catalog of official **Block Garden** visual assets, animated demonstrations, screenshots, and downloadable PDF save postcards.
@@ -96,6 +130,11 @@ The Block Garden Knowledge Hub exposes bundled **Agent Skills**, **Declarative T
 - 🧭 **`scan_for_nearby_ores`** (`/scan-for-nearby-ores`): Scans loaded voxel chunks for nearby ore deposits around player coordinates.
 - 🎆 **`fireworks`** (`/fireworks`): Real-time 3D voxel fireworks particle physics display.
 - 🎮 **`konami_code`** (`/konami-code`): Secret Konami Code sequence unlocker for dev mode & ore locator.
+- 💬 **`messaging`** (`/messaging`): Renders custom 3D voxel text messages in the sky.
+- 🔗 **`link`** (`/link`): Interactive voxel hyperlinks that open destination URLs when mined.
+- 🎯 **`tic_tac_toe`** (`/tic-tac-toe`): Playable 3D voxel Tic-Tac-Toe minigame with win detection and reset button.
+- 📸 **`photo`** (`/photo`): Quantizes and renders any photo or image URL into 3D voxel mosaic art.
+- 📹 **`video`** (`/video`): Live webcam video feed display streamed in real time onto an in-world voxel screen.
 
 ### Decoupled Engine & Presentation Architecture
 
@@ -112,13 +151,12 @@ Discoverable headlessly over HTTP per the [Agent Skills Discovery RFC](https://g
 
 ---
 
-## 📦 How to Run & Build
+## 📦 Deployment & CI/CD
 
-### Block Garden Knowledge Hub
-
-This repository is a static `shadow-claw-template` project deployed automatically to GitHub Pages via GitHub Actions (`.github/workflows/deploy-pages.yml`). It does not use a local `npm` dev server or build script.
+This repository is a static `shadow-claw-template` project deployed automatically to GitHub Pages via GitHub Actions (`.github/workflows/deploy-pages.yml`) using `npx shadow-claw build --prod`.
 
 - 🌐 **Live Portal**: [kherrick.github.io/block-garden-knowledge-hub](https://kherrick.github.io/block-garden-knowledge-hub/)
+- 💻 **Local Preview**: See [Quick Start](#-quick-start-local-development) above (`npx shadow-claw dev --open -y`).
 
 ---
 
