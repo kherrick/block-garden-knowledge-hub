@@ -1,7 +1,7 @@
 # 🌱 [Block Garden Knowledge Hub](https://kherrick.github.io/block-garden-knowledge-hub/)
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/kherrick/block-garden)
 [![Live Game](https://img.shields.io/badge/Play_Live-Block_Garden-2e7d32?style=flat&logo=html5)](https://kherrick.github.io/block-garden/)
+[![Ask DeepWiki](https://img.shields.io/badge/DeepWiki-kherrick%2fblock--garden--knowledge--hub-blue.svg)](https://deepwiki.com/kherrick/block-garden)
 
 Welcome to the official **Block Garden Knowledge Hub**! This project is an exhaustive, interactive documentation portal and technical reference guide for **Block Garden**—a full-featured 3D voxel sandbox exploration, building, and farming game engine built entirely with modern vanilla Web technologies.
 
