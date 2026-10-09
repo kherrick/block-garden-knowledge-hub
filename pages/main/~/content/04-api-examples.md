@@ -115,4 +115,4 @@ Visit the [Live Examples Gallery](https://kherrick.github.io/block-garden/src/ap
 
 ---
 
-⬅️ [Previous Page](/main/farming-and-botany) | ➡️ [Next Page](/main/demos-and-media)
+⬅️ [Previous Page](/main/farming-and-botany/) | ➡️ [Next Page](/main/demos-and-media/)

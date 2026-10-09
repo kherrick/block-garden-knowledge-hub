@@ -183,4 +183,4 @@ Site configuration (`shadow-claw.config.json`) automatically enables these tools
 
 ---
 
-⬅️ [Previous Page](/main/web-platform-and-performance) | ➡️ [Next Page](/main/memory)
+⬅️ [Previous Page](/main/web-platform-and-performance/) | ➡️ [Next Page](/main/memory/)

@@ -88,4 +88,4 @@ An architectural sky tower rising from sea level through the cloud layer into ae
 
 ---
 
-⬅️ [Previous Page](/main/demos-and-media) | ➡️ [Next Page](/main/web-platform-and-performance)
+⬅️ [Previous Page](/main/demos-and-media/) | ➡️ [Next Page](/main/web-platform-and-performance/)

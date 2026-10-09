@@ -95,4 +95,4 @@ Jump straight into pre-built worlds using seed links or downloadable PDF game sa
 
 ---
 
-⬅️ [Previous Page](/main/about) | ➡️ [Next Page](/main/farming-and-botany)
+⬅️ [Previous Page](/main/about/) | ➡️ [Next Page](/main/farming-and-botany/)

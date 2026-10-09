@@ -81,4 +81,4 @@ Ascend into the sky strata with zero-gravity flight (`K`) and construct high-alt
 
 ---
 
-⬅️ [Previous Page](/main/api-examples) | ➡️ [Next Page](/main/world-saves-and-pdfs)
+⬅️ [Previous Page](/main/api-examples/) | ➡️ [Next Page](/main/world-saves-and-pdfs/)

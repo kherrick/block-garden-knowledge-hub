@@ -110,4 +110,4 @@ Rather than relying on heavy VDOM diffing frameworks (React, Vue), Block Garden 
 
 ---
 
-⬅️ [Previous Page](/main) | ➡️ [Next Page](/main/controls)
+⬅️ [Previous Page](/main/) | ➡️ [Next Page](/main/controls/)

@@ -75,4 +75,4 @@ Block Garden includes 20+ distinct botanical species across several plant catego
 
 ---
 
-⬅️ [Previous Page](/main/controls) | ➡️ [Next Page](/main/api-examples)
+⬅️ [Previous Page](/main/controls/) | ➡️ [Next Page](/main/api-examples/)

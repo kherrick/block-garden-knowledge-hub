@@ -38,15 +38,15 @@ Enabled via `shadow-claw.config.json` (`enabledTools`) and discoverable headless
 
 ## 📚 Complete Documentation Index
 
-- **Chapter 1**: [Architecture & Procedural Engine](/main/about)
-- **Chapter 2**: [Gameplay Controls, Modes & Saves](/main/controls)
-- **Chapter 3**: [Farming Mechanics & Botanical Species](/main/farming-and-botany)
-- **Chapter 4**: [Public Modding API & Script Gallery](/main/api-examples)
-- **Chapter 5**: [Video Demos & Media Showcase](/main/demos-and-media)
-- **Chapter 6**: [PDF World Saves & Postcard Gallery](/main/world-saves-and-pdfs)
-- **Chapter 7**: [Web Platform Breakdown & Performance Engineering](/main/web-platform-and-performance)
-- **Chapter 8**: [Agent Skills, Declarative Tools & Slash Commands](/main/agent-skills-and-tools)
+- **Chapter 1**: [Architecture & Procedural Engine](/main/about/)
+- **Chapter 2**: [Gameplay Controls, Modes & Saves](/main/controls/)
+- **Chapter 3**: [Farming Mechanics & Botanical Species](/main/farming-and-botany/)
+- **Chapter 4**: [Public Modding API & Script Gallery](/main/api-examples/)
+- **Chapter 5**: [Video Demos & Media Showcase](/main/demos-and-media/)
+- **Chapter 6**: [PDF World Saves & Postcard Gallery](/main/world-saves-and-pdfs/)
+- **Chapter 7**: [Web Platform Breakdown & Performance Engineering](/main/web-platform-and-performance/)
+- **Chapter 8**: [Agent Skills, Declarative Tools & Slash Commands](/main/agent-skills-and-tools/)
 
 ---
 
-⬅️ [Previous Page](/main/agent-skills-and-tools)
+⬅️ [Previous Page](/main/agent-skills-and-tools/)
