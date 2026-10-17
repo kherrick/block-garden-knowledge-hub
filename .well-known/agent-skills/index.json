@@ -88,6 +88,13 @@
       ]
     },
     {
+      "name": "skill-creator",
+      "type": "skill-md",
+      "description": "Create, edit, review, and validate ShadowClaw declarative skills and their supporting resources.",
+      "url": "../../.agents/skills/main/skill-creator/SKILL.md",
+      "digest": "sha256:21cdf3af5603edd566c6cca9a02c8ac2489b51ff0d984862fb09804c72bd553a"
+    },
+    {
       "name": "tic-tac-toe",
       "type": "skill-md",
       "description": "Creates an interactive, playable 3D voxel Tic-Tac-Toe minigame in Block Garden with player switching, win detection, and reset button.",

@@ -58,6 +58,10 @@
   --shadow-claw-icon-eye-shine: #86efac;
 
   --shadow-claw-hljs-background-color: #111e13;
+
+  /* Other */
+  --shadow-claw-logo-margin: 0;
+  --shadow-claw-logo-size: 1.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
