@@ -31,7 +31,7 @@ Enabled via `shadow-claw.config.json` (`enabledTools`) and discoverable headless
 
 - **Core Engine Script (`block-garden.js`)**: Decoupled, portable ESM containing tool execution handlers, module URLs, and event constants.
 - **Custom Element Factory (`block-garden-element.js`)**: Portable component factory, context resolver, and bridge installer.
-- **Presentation Adapter (`.agents/scripts/main/block-garden-adapter.js`)**: Bridges on-page custom elements, UI controls, and BroadcastChannel events.
+- **Presentation Adapter (`.agents/scripts/block-garden-adapter.js`)**: Bridges on-page custom elements, UI controls, and BroadcastChannel events.
 - **Discovery Endpoint**: `/.well-known/agent-skills/index.json` provides RFC-compliant discovery with SHA-256 digests and dependency mapping.
 
 ---

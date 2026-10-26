@@ -16,8 +16,8 @@ Welcome to **Chapter 8**! The Block Garden Knowledge Hub integrates seamlessly w
 To allow external agents, web workers, and headless runtimes to execute tools without DOM dependencies, Block Garden separates core engine execution from UI presentation:
 
 - **Core Engine Script (`block-garden.js`)**: Pure ESM containing module loaders, constants, parameter parsers, and tool execution handlers (`executeOreScan`, `runFireworks`, `runKonamiCode`, `handleToolCommand`). Zero DOM or browser dependencies.
-- **Portable Custom Element Factory (`.agents/scripts/main/block-garden-element.js`)**: Web component lifecycle, dynamic mounting (`ensureBlockGardenDefined`, `createBlockGarden`, `renderBlockGarden`), context discovery, and BroadcastChannel bridge installer.
-- **Presentation Adapter (`.agents/scripts/main/block-garden-adapter.js`)**: Handles on-page `<block-garden>` canvas sizing, responsive layout, CSS variables, fullscreen controls, iframe dialog interception, and DOM event listeners.
+- **Portable Custom Element Factory (`.agents/scripts/block-garden-element.js`)**: Web component lifecycle, dynamic mounting (`ensureBlockGardenDefined`, `createBlockGarden`, `renderBlockGarden`), context discovery, and BroadcastChannel bridge installer.
+- **Presentation Adapter (`.agents/scripts/block-garden-adapter.js`)**: Handles on-page `<block-garden>` canvas sizing, responsive layout, CSS variables, fullscreen controls, iframe dialog interception, and DOM event listeners.
 
 > [!NOTE]
 > **Headless-First by Design**: Graphical presentation is completely optional. All Block Garden skills and tools run headlessly in AI agent tool runners, Web Workers, Node.js scripts, and CLI pipelines with zero DOM or HTML dependencies. The presentation adapter (`block-garden-adapter.js`) and `<block-garden>` custom element exist solely to provide an optional interactive 3D WebGL viewport when embedded in web pages or dashboards.
@@ -42,7 +42,7 @@ Conforming to the [Agent Skills Discovery RFC](https://github.com/cloudflare/age
 
 ### 🏗️ 1. Architecture: Cross-Frame Communication Bridge
 
-Because ShadowClaw executes agent tool logic within an isolated Web Worker context without direct DOM access, communication between the AI assistant (`BlockGardener`) and the active 3D `<block-garden>` WebGL viewport uses a bi-directional **`BroadcastChannel` Bridge** inside `.agents/scripts/main/block-garden-adapter.js`:
+Because ShadowClaw executes agent tool logic within an isolated Web Worker context without direct DOM access, communication between the AI assistant (`BlockGardener`) and the active 3D `<block-garden>` WebGL viewport uses a bi-directional **`BroadcastChannel` Bridge** inside `.agents/scripts/block-garden-adapter.js`:
 
 ```text
 ┌───────────────────────────┐                ┌───────────────────────────┐
@@ -62,7 +62,7 @@ Because ShadowClaw executes agent tool logic within an isolated Web Worker conte
 
 #### Bridge Wiring & Listener Guard
 
-In `.agents/scripts/main/block-garden-adapter.js`, listeners are registered with a singleton guard to prevent duplicate handlers during SPA navigation:
+In `.agents/scripts/block-garden-adapter.js`, listeners are registered with a singleton guard to prevent duplicate handlers during SPA navigation:
 
 ```javascript
 if (
@@ -162,7 +162,7 @@ Site configuration (`shadow-claw.config.json`) automatically enables these tools
   "customElements": {
     "scripts": [
       {
-        "src": ".agents/scripts/main/block-garden-adapter.js",
+        "src": ".agents/scripts/block-garden-adapter.js",
         "hasInit": true
       },
       "https://kherrick.github.io/block-garden/block-garden-bundle-min.mjs"

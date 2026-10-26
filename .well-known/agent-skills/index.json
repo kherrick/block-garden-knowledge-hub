@@ -7,12 +7,12 @@
       "name": "fireworks",
       "type": "skill-md",
       "description": "Launches real-time 3D voxel fireworks particle physics displays in the sky using Block Garden's API.",
-      "url": "../../.agents/skills/main/fireworks/SKILL.md",
+      "url": "../../.agents/skills/fireworks/SKILL.md",
       "digest": "sha256:d4b09b9ffbbe2fcc9f6fe529b08bd6844f1a9e51e517937004b6fc22afb53b01",
       "tools": [
         {
           "name": "fireworks",
-          "url": "../../.agents/tools/main/fireworks.json",
+          "url": "../../.agents/tools/fireworks.json",
           "digest": "sha256:1f95bc4c5fade0f38258d6479c0bc32cf5db5a9144e53a61dfcbc31574f12745"
         }
       ]
@@ -21,12 +21,12 @@
       "name": "konami-code",
       "type": "skill-md",
       "description": "Executes the secret Konami Code sequence (↑ ↑ ↓ ↓ ← → ← → B A) to unlock dev mode, ore depth locator, fast growth, and hidden menu items.",
-      "url": "../../.agents/skills/main/konami-code/SKILL.md",
+      "url": "../../.agents/skills/konami-code/SKILL.md",
       "digest": "sha256:f230e17f365fbd59914a692ef51b8dca09801e4a9b0b2132aeed0aaa1ccd1fcb",
       "tools": [
         {
           "name": "konami_code",
-          "url": "../../.agents/tools/main/konami_code.json",
+          "url": "../../.agents/tools/konami_code.json",
           "digest": "sha256:39053919966508b8b4e3ca49c654a8ed8b876cef0343e3a612cce964ef874a4d"
         }
       ]
@@ -35,12 +35,12 @@
       "name": "link",
       "type": "skill-md",
       "description": "Places an interactive 3D voxel link in the world that opens any destination URL when broken/mined by the player.",
-      "url": "../../.agents/skills/main/link/SKILL.md",
+      "url": "../../.agents/skills/link/SKILL.md",
       "digest": "sha256:a607a46f9f3187ac5fe45c3f4db8b9aa089a49c3e23143a1f5358722afeb02ff",
       "tools": [
         {
           "name": "link",
-          "url": "../../.agents/tools/main/link.json",
+          "url": "../../.agents/tools/link.json",
           "digest": "sha256:4c57621d4fc6441cec5190426eb32654222dc218fd1d658bdeb2b7371c563a07"
         }
       ]
@@ -49,12 +49,12 @@
       "name": "messaging",
       "type": "skill-md",
       "description": "Draws custom 3D voxel text messages in the sky of the live Block Garden world.",
-      "url": "../../.agents/skills/main/messaging/SKILL.md",
+      "url": "../../.agents/skills/messaging/SKILL.md",
       "digest": "sha256:a59f807558e5a648c379403afc10ce7c8d982397972d643e6d7df584e9b4ce46",
       "tools": [
         {
           "name": "messaging",
-          "url": "../../.agents/tools/main/messaging.json",
+          "url": "../../.agents/tools/messaging.json",
           "digest": "sha256:a5b2c87acc134b6e4289ff3a1dd1975fc023b2d0b2efd875b40917df20a219eb"
         }
       ]
@@ -63,12 +63,12 @@
       "name": "photo",
       "type": "skill-md",
       "description": "Quantizes and renders any photo, image URL, or base64 data URI into 3D voxel pixel mosaic art in Block Garden.",
-      "url": "../../.agents/skills/main/photo/SKILL.md",
+      "url": "../../.agents/skills/photo/SKILL.md",
       "digest": "sha256:a5f9264b91a3e3e6abe6c80cf92a700f401e9928d5f8744e1c7cb2e8ac80ab73",
       "tools": [
         {
           "name": "photo",
-          "url": "../../.agents/tools/main/photo.json",
+          "url": "../../.agents/tools/photo.json",
           "digest": "sha256:85c1dd355d69021f058f057141d574f58e7fc9f28dd6ba547ddf759c25cda2a2"
         }
       ]
@@ -77,12 +77,12 @@
       "name": "scan-for-nearby-ores",
       "type": "skill-md",
       "description": "Scans loaded Block Garden voxel chunks for nearby ore deposits around player coordinates.",
-      "url": "../../.agents/skills/main/scan-for-nearby-ores/SKILL.md",
+      "url": "../../.agents/skills/scan-for-nearby-ores/SKILL.md",
       "digest": "sha256:a8e32c162da87e1e9f5930c4d31aeed8167458d7a7e8932c7173ed0e4eb11583",
       "tools": [
         {
           "name": "scan_for_nearby_ores",
-          "url": "../../.agents/tools/main/scan_for_nearby_ores.json",
+          "url": "../../.agents/tools/scan_for_nearby_ores.json",
           "digest": "sha256:872e304a13391658bfd4642a71f03975d10089326e0eaaeb3084bd51ef3169b8"
         }
       ]
@@ -91,19 +91,25 @@
       "name": "skill-creator",
       "type": "skill-md",
       "description": "Create, edit, review, and validate ShadowClaw declarative skills and their supporting resources.",
-      "url": "../../.agents/skills/main/skill-creator/SKILL.md",
-      "digest": "sha256:21cdf3af5603edd566c6cca9a02c8ac2489b51ff0d984862fb09804c72bd553a"
+      "url": "../../.agents/skills/skill-creator/SKILL.md",
+      "digest": "sha256:988436fbfa40e2da9e3a56904e4482a2783848feb291037667b26e188625874b",
+      "files": [
+        "SKILL.md",
+        "references/declarative-pipelines.md",
+        "references/declarative-tools.md",
+        "references/frontmatter-spec.md"
+      ]
     },
     {
       "name": "tic-tac-toe",
       "type": "skill-md",
       "description": "Creates an interactive, playable 3D voxel Tic-Tac-Toe minigame in Block Garden with player switching, win detection, and reset button.",
-      "url": "../../.agents/skills/main/tic-tac-toe/SKILL.md",
+      "url": "../../.agents/skills/tic-tac-toe/SKILL.md",
       "digest": "sha256:93694a53569f85eda0e312df3fa7f1ece4e29a36395d172db64c3e041387d16f",
       "tools": [
         {
           "name": "tic_tac_toe",
-          "url": "../../.agents/tools/main/tic_tac_toe.json",
+          "url": "../../.agents/tools/tic_tac_toe.json",
           "digest": "sha256:49b76946b5b888009efa2da0e5d41195da80a765b4e77d4764bcda39f5ffe46c"
         }
       ]
@@ -112,12 +118,12 @@
       "name": "video",
       "type": "skill-md",
       "description": "Creates an in-world real-time camera video display screen in Block Garden, streaming webcam frames directly into 3D voxels.",
-      "url": "../../.agents/skills/main/video/SKILL.md",
+      "url": "../../.agents/skills/video/SKILL.md",
       "digest": "sha256:ce3fee259292bbdfacd7ab3786d84e47740c805f4ac45175fc2724adf6a79619",
       "tools": [
         {
           "name": "video",
-          "url": "../../.agents/tools/main/video.json",
+          "url": "../../.agents/tools/video.json",
           "digest": "sha256:d189f4c0bce7a0a5bd6b0a7df430ff5d9ab93d56dd3b9ebb86e210f0aacc5287"
         }
       ]
@@ -127,49 +133,49 @@
     {
       "name": "fireworks",
       "description": "Launches a 3D voxel fireworks particle display inside the live Block Garden world.",
-      "url": "../../.agents/tools/main/fireworks.json",
+      "url": "../../.agents/tools/fireworks.json",
       "digest": "sha256:1f95bc4c5fade0f38258d6479c0bc32cf5db5a9144e53a61dfcbc31574f12745"
     },
     {
       "name": "konami_code",
       "description": "Executes the secret Konami Code sequence in Block Garden to unlock dev mode, ore depth scanner, fast growth, and hidden options.",
-      "url": "../../.agents/tools/main/konami_code.json",
+      "url": "../../.agents/tools/konami_code.json",
       "digest": "sha256:39053919966508b8b4e3ca49c654a8ed8b876cef0343e3a612cce964ef874a4d"
     },
     {
       "name": "link",
       "description": "Places an interactive 3D voxel link in the world that opens any destination URL when broken/mined by the player.",
-      "url": "../../.agents/tools/main/link.json",
+      "url": "../../.agents/tools/link.json",
       "digest": "sha256:4c57621d4fc6441cec5190426eb32654222dc218fd1d658bdeb2b7371c563a07"
     },
     {
       "name": "messaging",
       "description": "Draws custom 3D voxel text messages in the sky of the live Block Garden world.",
-      "url": "../../.agents/tools/main/messaging.json",
+      "url": "../../.agents/tools/messaging.json",
       "digest": "sha256:a5b2c87acc134b6e4289ff3a1dd1975fc023b2d0b2efd875b40917df20a219eb"
     },
     {
       "name": "photo",
       "description": "Quantizes and renders any photo, image URL, or base64 data URI into 3D voxel pixel mosaic art in Block Garden.",
-      "url": "../../.agents/tools/main/photo.json",
+      "url": "../../.agents/tools/photo.json",
       "digest": "sha256:85c1dd355d69021f058f057141d574f58e7fc9f28dd6ba547ddf759c25cda2a2"
     },
     {
       "name": "scan_for_nearby_ores",
       "description": "Triggers Block Garden's in-game Ore Locator scanner on loaded voxel chunks around player coordinates.",
-      "url": "../../.agents/tools/main/scan_for_nearby_ores.json",
+      "url": "../../.agents/tools/scan_for_nearby_ores.json",
       "digest": "sha256:872e304a13391658bfd4642a71f03975d10089326e0eaaeb3084bd51ef3169b8"
     },
     {
       "name": "tic_tac_toe",
       "description": "Creates an interactive, playable 3D voxel Tic-Tac-Toe minigame in Block Garden. Players break blocks to place X or O, and break the Iron button above the board to reset.",
-      "url": "../../.agents/tools/main/tic_tac_toe.json",
+      "url": "../../.agents/tools/tic_tac_toe.json",
       "digest": "sha256:49b76946b5b888009efa2da0e5d41195da80a765b4e77d4764bcda39f5ffe46c"
     },
     {
       "name": "video",
       "description": "Creates an in-world real-time camera video display screen in Block Garden. Maps live webcam frames directly into 3D voxel blocks.",
-      "url": "../../.agents/tools/main/video.json",
+      "url": "../../.agents/tools/video.json",
       "digest": "sha256:d189f4c0bce7a0a5bd6b0a7df430ff5d9ab93d56dd3b9ebb86e210f0aacc5287"
     }
   ],
@@ -177,37 +183,37 @@
     {
       "name": "block-garden-adapter",
       "description": "Portable ESM engine logic and tool execution handler for block-garden-adapter.",
-      "url": "../../.agents/scripts/main/block-garden-adapter.js",
+      "url": "../../.agents/scripts/block-garden-adapter.js",
       "digest": "sha256:e85b3ca98b8600469d69c5eaf43dd034fcb1f022f17fd9e5e47616ab9b56ec5b"
     },
     {
       "name": "block-garden-element",
       "description": "Portable ESM engine logic and tool execution handler for block-garden-element.",
-      "url": "../../.agents/scripts/main/block-garden-element.js",
+      "url": "../../.agents/scripts/block-garden-element.js",
       "digest": "sha256:e7be9b3924a5b962c409183fbaac6e01c515b608cbeb9a0992418a8f9c81b4fe"
     },
     {
       "name": "block-garden",
       "description": "Portable ESM engine logic and tool execution handler for block-garden.",
-      "url": "../../.agents/scripts/main/block-garden.js",
+      "url": "../../.agents/scripts/block-garden.js",
       "digest": "sha256:eba648bc5de67843b82fabc9f4a56f0422c91d0e6abacafd3240905bfa4df6bb"
     }
   ],
   "dependencies": {
     "tools": [
-      "../../.agents/tools/main/fireworks.json",
-      "../../.agents/tools/main/konami_code.json",
-      "../../.agents/tools/main/link.json",
-      "../../.agents/tools/main/messaging.json",
-      "../../.agents/tools/main/photo.json",
-      "../../.agents/tools/main/scan_for_nearby_ores.json",
-      "../../.agents/tools/main/tic_tac_toe.json",
-      "../../.agents/tools/main/video.json"
+      "../../.agents/tools/fireworks.json",
+      "../../.agents/tools/konami_code.json",
+      "../../.agents/tools/link.json",
+      "../../.agents/tools/messaging.json",
+      "../../.agents/tools/photo.json",
+      "../../.agents/tools/scan_for_nearby_ores.json",
+      "../../.agents/tools/tic_tac_toe.json",
+      "../../.agents/tools/video.json"
     ],
     "scripts": [
-      "../../.agents/scripts/main/block-garden-adapter.js",
-      "../../.agents/scripts/main/block-garden-element.js",
-      "../../.agents/scripts/main/block-garden.js"
+      "../../.agents/scripts/block-garden-adapter.js",
+      "../../.agents/scripts/block-garden-element.js",
+      "../../.agents/scripts/block-garden.js"
     ]
   }
 }

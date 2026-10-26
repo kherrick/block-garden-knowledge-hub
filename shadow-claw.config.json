@@ -44,7 +44,7 @@
     "allowedDomains": ["kherrick.github.io", "cdn.jsdelivr.net"],
     "scripts": [
       {
-        "src": ".agents/scripts/main/block-garden-adapter.js",
+        "src": ".agents/scripts/block-garden-adapter.js",
         "hasInit": true
       },
       "https://kherrick.github.io/block-garden/block-garden-bundle-min.mjs"
