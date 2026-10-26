@@ -58,9 +58,7 @@
       "allow-popups-to-escape-sandbox"
     ],
     "scriptSrc": [
-      "'unsafe-inline'",
-      "'unsafe-hashes'",
-      "'sha256-RP3cMiHkU8AfRHWbW/DtP7Xqr5YZTqBXDYh6TYRlV3c='"
+      "'unsafe-inline'"
     ],
     "workerSrc": ["'self'", "blob:", "data:"],
     "connectSrc": [
