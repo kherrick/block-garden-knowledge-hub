@@ -57,9 +57,7 @@
       "allow-popups",
       "allow-popups-to-escape-sandbox"
     ],
-    "scriptSrc": [
-      "'unsafe-inline'"
-    ],
+    "scriptSrc": ["'unsafe-inline'"],
     "workerSrc": ["'self'", "blob:", "data:"],
     "connectSrc": [
       "'self'",
