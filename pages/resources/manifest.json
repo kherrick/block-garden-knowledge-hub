@@ -2,12 +2,20 @@
   "name": "Block Garden - Knowledge Hub",
   "short_name": "Block Garden 🧠📡",
   "description": "3D sandbox exploration, procedural world generation, farming, and interactive game engine documentation powered by ShadowClaw.",
+  "id": "block-garden-knowledge-hub",
+  "scope": ".",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#09110a",
   "theme_color": "#22c55e",
   "orientation": "any",
   "icons": [
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
     {
       "src": "assets/icons/48.png",
       "sizes": "48x48",
@@ -39,8 +47,26 @@
       "purpose": "any"
     },
     {
+      "src": "assets/icons/180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "assets/icons/192.png",
       "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
@@ -48,7 +74,7 @@
       "src": "assets/icons/512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable"
     },
     {
       "src": "assets/icons/1024.png",
@@ -64,6 +90,13 @@
     }
   ],
   "screenshots": [
+    {
+      "src": "assets/screenshots/block-garden-knowledge-hub-1024x768.png",
+      "sizes": "1024x768",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Block Garden Knowledge Hub workbench"
+    },
     {
       "src": "assets/screenshots/block-garden-screenshot-2266x1440.png",
       "sizes": "2266x1440",
